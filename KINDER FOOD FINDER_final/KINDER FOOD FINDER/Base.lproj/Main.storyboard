@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5Rh-W6-W4A">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5Rh-W6-W4A">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -216,7 +216,6 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="jnW-Mz-IFm"/>
                         <segue destination="nY4-zv-y3g" kind="relationship" relationship="viewControllers" id="ulm-Yd-0Do"/>
                         <segue destination="mY0-0k-7FY" kind="relationship" relationship="viewControllers" id="ZhU-Id-4XW"/>
-                        <segue destination="t8g-Lc-pqk" kind="relationship" relationship="viewControllers" id="Yfh-ps-t5j"/>
                         <segue destination="bkL-hP-I5W" kind="relationship" relationship="viewControllers" id="jNL-FC-3XV"/>
                     </connections>
                 </tabBarController>
@@ -776,27 +775,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EnR-Eh-su7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4130" y="1536"/>
-        </scene>
-        <!--Report-->
-        <scene sceneID="JRh-gv-I5h">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t8g-Lc-pqk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Report" image="navigator" id="sLN-lP-oA8"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ya3-Uq-8Z0">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.6193101902" green="0.94946672509999996" blue="0.67668082399999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="xol-Fg-8we" kind="relationship" relationship="rootViewController" id="ffM-dR-hFU"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5zw-kn-chs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2959" y="1183"/>
+            <point key="canvasLocation" x="9303" y="-1449"/>
         </scene>
         <!--Browser-->
         <scene sceneID="FQR-yU-B5z">
@@ -969,11 +948,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" white="0.8982069748" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" white="0.94773264440000005" alpha="1" colorSpace="calibratedWhite"/>
-                        <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" image="chickens" id="LCS-36-pIb">
+                        <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" preservesSuperviewLayoutMargins="YES" image="chickens" id="LCS-36-pIb">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <view key="tableFooterView" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="3UC-JB-MmY" userLabel="FooterView">
+                        <view key="tableFooterView" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" id="3UC-JB-MmY" userLabel="FooterView">
                             <rect key="frame" x="0.0" y="472" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -1073,7 +1052,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="dvU-hZ-gX7" kind="show" identifier="showReport" id="VYb-xe-fFt"/>
+                                    <segue destination="op7-Pw-hiv" kind="show" identifier="showReport" id="5wN-NV-4Ls"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1184,6 +1163,24 @@ NB. RSPCA, FREPA and Egg Corp Assured Scheme allow for beak-trimming which is th
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y54-7z-Ufh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7158" y="-1041"/>
+        </scene>
+        <!--Reportvc-->
+        <scene sceneID="4kZ-jR-QRK">
+            <objects>
+                <viewController id="op7-Pw-hiv" customClass="Reportvc" customModule="KINDER_FOOD_FINDER" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="REx-k5-BeH"/>
+                        <viewControllerLayoutGuide type="bottom" id="RlO-Qw-b0a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zpm-n7-flw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="20a-cu-f4O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8046" y="-1149"/>
         </scene>
         <!--Map-->
         <scene sceneID="Ji7-Z9-kaM">
@@ -1891,17 +1888,17 @@ Get in touch by emailing us as @ XXX
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lettuce rows 2013" translatesAutoresizingMaskIntoConstraints="NO" id="3Ha-Cg-Zrm" userLabel="Background Image View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="860"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <view clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAT-96-16W" userLabel="MaskView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="860"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="mxb-M0-8Ec">
-                                <rect key="frame" x="30" y="128" width="315" height="564"/>
+                                <rect key="frame" x="30" y="128" width="315" height="516"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="PIq-YB-0ho">
-                                        <rect key="frame" x="0.0" y="0.0" width="315" height="484"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="436"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="37r-U8-zjX">
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="38"/>
@@ -2049,19 +2046,19 @@ Get in touch by emailing us as @ XXX
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Dts-Ye-UUN">
-                                                <rect key="frame" x="0.0" y="174" width="315" height="61"/>
+                                                <rect key="frame" x="0.0" y="174" width="315" height="13"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4Vq-ha-JpD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="315" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="315" height="2"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQR-vN-DfE">
-                                                                <rect key="frame" x="0.0" y="0.0" width="315" height="20.333333333333332"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Gender:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQR-vN-DfE">
+                                                                <rect key="frame" x="0.0" y="0.0" width="315" height="0.0"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ag3-Ie-YU8" userLabel="GenderButton">
-                                                                <rect key="frame" x="0.0" y="20.333333333333314" width="315" height="30.666666666666671"/>
+                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ag3-Ie-YU8" userLabel="GenderButton">
+                                                                <rect key="frame" x="0.0" y="0.0" width="315" height="3"/>
                                                                 <segments>
                                                                     <segment title="Male"/>
                                                                     <segment title="Female"/>
@@ -2088,7 +2085,7 @@ Get in touch by emailing us as @ XXX
                                                         </constraints>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YN1-sJ-H31" userLabel="Divider">
-                                                        <rect key="frame" x="0.0" y="60" width="260" height="1"/>
+                                                        <rect key="frame" x="0.0" y="12" width="260" height="1"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="jcQ-Sz-mXg"/>
@@ -2101,7 +2098,7 @@ Get in touch by emailing us as @ XXX
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gks-Ry-tuG">
-                                                <rect key="frame" x="0.0" y="255" width="315" height="38"/>
+                                                <rect key="frame" x="0.0" y="207" width="315" height="38"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Pz-Jp-oCN">
                                                         <rect key="frame" x="0.0" y="0.0" width="315" height="37"/>
@@ -2158,7 +2155,7 @@ Get in touch by emailing us as @ XXX
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ees-GC-HB7">
-                                                <rect key="frame" x="0.0" y="313" width="315" height="150"/>
+                                                <rect key="frame" x="0.0" y="265" width="315" height="150"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="c8v-Jc-ocw">
                                                         <rect key="frame" x="0.0" y="0.0" width="315" height="150"/>
@@ -2211,7 +2208,7 @@ Get in touch by emailing us as @ XXX
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kkj-bp-e6j" userLabel="Divider">
-                                                <rect key="frame" x="0.0" y="483" width="315" height="1"/>
+                                                <rect key="frame" x="0.0" y="435" width="315" height="1"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="9G3-lO-mHv"/>
@@ -2229,7 +2226,7 @@ Get in touch by emailing us as @ XXX
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e98-iw-NPM" customClass="LineButton" customModule="KINDER_FOOD_FINDER" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="514" width="315" height="50"/>
+                                        <rect key="frame" x="0.0" y="466" width="315" height="50"/>
                                         <color key="backgroundColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="THx-r0-CBW"/>
@@ -2459,20 +2456,19 @@ Get in touch by emailing us as @ XXX
     <resources>
         <image name="Lettuce rows 2013" width="1125" height="2000"/>
         <image name="Searchbgimage" width="800" height="800"/>
-        <image name="chickens" width="372" height="353"/>
+        <image name="chickens" width="372" height="353.33334350585938"/>
         <image name="defaultProfileImage" width="102" height="102"/>
         <image name="email" width="24" height="16"/>
-        <image name="facebook" width="28" height="26"/>
+        <image name="facebook" width="28.666666030883789" height="26.666666030883789"/>
         <image name="google" width="21" height="21"/>
-        <image name="house-outline" width="21" height="21"/>
+        <image name="house-outline" width="21.333333969116211" height="21.333333969116211"/>
         <image name="learnegg" width="800" height="416"/>
         <image name="lock" width="20" height="27"/>
         <image name="logoutIcon" width="19" height="21"/>
-        <image name="map-location" width="42" height="42"/>
-        <image name="navigator" width="21" height="21"/>
-        <image name="party-hat" width="42" height="42"/>
-        <image name="unfav" width="21" height="21"/>
-        <image name="windows" width="21" height="21"/>
+        <image name="map-location" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="party-hat" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="unfav" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="windows" width="21.333333969116211" height="21.333333969116211"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Y9V-N9-ffc"/>

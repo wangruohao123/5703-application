@@ -14,11 +14,11 @@
 		2876B0282277DFCF00E900AD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2876B0252277DFCF00E900AD /* LoginViewController.swift */; };
 		2876B0292277DFCF00E900AD /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2876B0262277DFCF00E900AD /* HomePageViewController.swift */; };
 		2876B02B2277E22900E900AD /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2876B02A2277E22900E900AD /* SwiftyJSON.swift */; };
+		37FADA3E227A2F9A00AA9D18 /* Reportvc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FADA3D227A2F9A00AA9D18 /* Reportvc.swift */; };
 		5CD45675227063A300E3000D /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD45674227063A300E3000D /* Favorite.swift */; };
 		812860466B367B16FCB9784C /* Pods_KINDER_FOOD_FINDER.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31AEF43902B501AFAA762D51 /* Pods_KINDER_FOOD_FINDER.framework */; };
 		9A7268AA225CB75B00E45BF4 /* BrowserResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7268A9225CB75B00E45BF4 /* BrowserResultVC.swift */; };
 		B92CE2E1227163A6004C241F /* favorite.json in Resources */ = {isa = PBXBuildFile; fileRef = B92CE2E0227163A6004C241F /* favorite.json */; };
-		B93AECBD22731D7B00758E6E /* ReportTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AECBC22731D7B00758E6E /* ReportTableVC.swift */; };
 		B93AECBF2273272D00758E6E /* LearnMoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AECBE2273272D00758E6E /* LearnMoreVC.swift */; };
 		B93BB34D2249CDFB00054AF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93BB34C2249CDFB00054AF5 /* AppDelegate.swift */; };
 		B93BB34F2249CDFB00054AF5 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93BB34E2249CDFB00054AF5 /* Home.swift */; };
@@ -53,11 +53,11 @@
 		2876B0262277DFCF00E900AD /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		2876B02A2277E22900E900AD /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		31AEF43902B501AFAA762D51 /* Pods_KINDER_FOOD_FINDER.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KINDER_FOOD_FINDER.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37FADA3D227A2F9A00AA9D18 /* Reportvc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reportvc.swift; sourceTree = "<group>"; };
 		5CD45674227063A300E3000D /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		87DF8843A6CD8E9FAA5545F6 /* Pods-KINDER FOOD FINDER.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KINDER FOOD FINDER.release.xcconfig"; path = "Target Support Files/Pods-KINDER FOOD FINDER/Pods-KINDER FOOD FINDER.release.xcconfig"; sourceTree = "<group>"; };
 		9A7268A9225CB75B00E45BF4 /* BrowserResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserResultVC.swift; sourceTree = "<group>"; };
 		B92CE2E0227163A6004C241F /* favorite.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = favorite.json; sourceTree = "<group>"; };
-		B93AECBC22731D7B00758E6E /* ReportTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTableVC.swift; sourceTree = "<group>"; };
 		B93AECBE2273272D00758E6E /* LearnMoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnMoreVC.swift; sourceTree = "<group>"; };
 		B93BB3492249CDFB00054AF5 /* KINDER FOOD FINDER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KINDER FOOD FINDER.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B93BB34C2249CDFB00054AF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				B93AECBE2273272D00758E6E /* LearnMoreVC.swift */,
-				B93AECBC22731D7B00758E6E /* ReportTableVC.swift */,
+				37FADA3D227A2F9A00AA9D18 /* Reportvc.swift */,
 			);
 			path = "Report and Learn more";
 			sourceTree = "<group>";
@@ -165,7 +165,6 @@
 				B9407190224B612F00763AC0 /* View */,
 				B9C7890C225320D8005123E9 /* Search Function */,
 				B94DDC7222570733008923C4 /* Browser */,
-				B94DDC7022570703008923C4 /* Report */,
 				B93CFF7722603F5900702096 /* More */,
 			);
 			path = "KINDER FOOD FINDER";
@@ -198,14 +197,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B94DDC7022570703008923C4 /* Report */ = {
-			isa = PBXGroup;
-			children = (
-				B948FE18224E28F9004487D8 /* ReportVC.swift */,
-			);
-			path = Report;
-			sourceTree = "<group>";
-		};
 		B94DDC7122570713008923C4 /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +207,7 @@
 				B948FE10224CCF9B004487D8 /* Rawdata.swift */,
 				B941D6332260336F000176EF /* UIViewHelper.swift */,
 				B95CE4F62265DC2C00435443 /* RoundedTextField.swift */,
+				B948FE18224E28F9004487D8 /* ReportVC.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -417,7 +409,6 @@
 				B9F67DC3225C220A00ED3D2A /* ClassCell.swift in Sources */,
 				2876B02B2277E22900E900AD /* SwiftyJSON.swift in Sources */,
 				B9C7891022535E4B005123E9 /* SearchVC.swift in Sources */,
-				B93AECBD22731D7B00758E6E /* ReportTableVC.swift in Sources */,
 				B9407197224B6C6C00763AC0 /* LineButton.swift in Sources */,
 				5CD45675227063A300E3000D /* Favorite.swift in Sources */,
 				2876B0292277DFCF00E900AD /* HomePageViewController.swift in Sources */,
@@ -426,6 +417,7 @@
 				B94DDC7422571114008923C4 /* ClassTableVC.swift in Sources */,
 				281C25F622781D0600EE6867 /* Mapvc.swift in Sources */,
 				B948FE0F224CCF5B004487D8 /* AccraSearchTableVC.swift in Sources */,
+				37FADA3E227A2F9A00AA9D18 /* Reportvc.swift in Sources */,
 				B948FE0D224CCE97004487D8 /* CardCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

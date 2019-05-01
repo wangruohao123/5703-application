@@ -2,7 +2,7 @@
 //  Data.swift
 //  KINDER FOOD FINDER
 //
-//  Created by Boning Het on 2019/03/28.
+//  Created by Boning He on 2019/03/28.
 //  Copyright © 2019 KINDER FOOD FINDER. All rights reserved.
 //
 

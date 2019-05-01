@@ -68,11 +68,11 @@ class DetailController: UITableViewController {
             return cell
         case 4:
              let cell = tableView.dequeueReusableCell(withIdentifier: "LearnCell", for: indexPath)
-            cell.textLabel?.text = "Learn more about what this rating means for the animals"
+            cell.textLabel?.text = "Learn more about what this rating means for animals(click it)"
              return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReportCell", for: indexPath)
-            cell.textLabel?.text = "Report where you found this product"
+            cell.textLabel?.text = "Report where you found this product(click it)"
             return cell
         }
         
@@ -82,7 +82,7 @@ class DetailController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showReport" {
     
-            let destination = segue.destination as! ReportTableVC
+            let destination = segue.destination as! Reportvc
             destination.Rawdata = Rawdata
         }
         if segue.identifier == "showLearn" {

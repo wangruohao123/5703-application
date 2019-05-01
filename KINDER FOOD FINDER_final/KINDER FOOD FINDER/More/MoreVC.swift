@@ -32,7 +32,7 @@ class MoreVC: UIViewController {
         let signInPage = self.storyboard?.instantiateViewController(withIdentifier: "UIViewController") as! UIViewController
         let appDelegate = UIApplication.shared.delegate
         appDelegate?.window??.rootViewController = signInPage
-        print("---------------")
+        
     }
  
     
