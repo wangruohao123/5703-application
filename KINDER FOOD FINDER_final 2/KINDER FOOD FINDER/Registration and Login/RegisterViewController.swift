@@ -46,6 +46,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     }
     @IBAction func appTapped(_ sender: Any) {
         selectPickView.isHidden = false
+        self.ageTextField.text = "Under 18"
     }
     
     @IBAction func appTappedOver(_ sender: Any) {
@@ -96,7 +97,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
             return;
         }
         //send data to server side
-        let myUrl = NSURL(string: "http://ec2-52-64-193-227.ap-southeast-2.compute.amazonaws.com:8000/users/register")
+        let myUrl = NSURL(string: "http://ec2-13-239-136-215.ap-southeast-2.compute.amazonaws.com:8000/users/register")
         let request = NSMutableURLRequest(url: myUrl as! URL);
         request.httpMethod = "POST";
       

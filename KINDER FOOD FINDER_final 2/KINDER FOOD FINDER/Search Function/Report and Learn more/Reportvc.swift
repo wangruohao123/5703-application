@@ -161,11 +161,11 @@ class Reportvc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
             return ;}
         // send user data to server side
         
-        let myUrl = NSURL(string: "http://ec2-52-64-193-227.ap-southeast-2.compute.amazonaws.com:8000/report/")
+        let myUrl = NSURL(string: "http://ec2-13-239-136-215.ap-southeast-2.compute.amazonaws.com:8000/report/")
         let request = NSMutableURLRequest(url: myUrl! as URL)
         request.httpMethod = "POST"
         
-        let postString = "PID=\(productId ?? "")&product=\(productName ?? "")&coordinate=\(coordinate ?? "")&description=\(description ?? "")";
+        let postString = "product_id=\(productId ?? "")&product_name=\(productName ?? "")&coordinate=\(coordinate ?? "")&location_description=\(description ?? "")";
         request.httpBody = postString.data(using: String.Encoding.utf8);
         print(postString)
         let task = URLSession.shared.dataTask(with: request as URLRequest){
@@ -185,7 +185,7 @@ class Reportvc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
                 let code = httpResponse.statusCode
                 var result: Double = Double(code)
                 print(code)
-                if(result == 404){
+                if(result == 400){
                     DispatchQueue.main.async(execute:{
                         var myAlert = UIAlertController(title: "Alert", message: "something wrong ", preferredStyle: UIAlertController.Style.alert);
                         let okAction = UIAlertAction(title: "ok", style: UIAlertAction.Style.default,handler:nil)
@@ -194,29 +194,10 @@ class Reportvc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
                         return;
                     })
                 }
-                if(result==200){
+                if(result==201){
                     DispatchQueue.main.async(execute:{
-                        var myAlert = UIAlertController(title: "Alert", message: "report successful ", preferredStyle: UIAlertController.Style.alert);
-                        let okAction = UIAlertAction(title: "ok", style: UIAlertAction.Style.default,handler:nil)
-                        myAlert.addAction(okAction);
-                        self.present(myAlert, animated:true, completion:nil);
-                        return;
+                        self.displayMyAlertMessage(userMessage: "Report successful")
                     })
-                    
-                    //                    let json2 = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
-                    //                    let accessToken = json2!["token"] as? String
-                    //                    let saveToken: Bool = KeychainWrapper.standard.set(accessToken!, forKey: "accessToken")
-                    //                    //                                UserDefaults.standard.set(true,forKey: "isUserLoggedIn")
-                    //                    //                                UserDefaults.standard.synchronize();
-                    //                    //                                self.dismiss(animated: true, completion: nil)
-                    //                    //store data in local
-                    //                    UserDefaults.standard.set(username,forKey: "username");
-                    //                    UserDefaults.standard.synchronize();
-                    //                    DispatchQueue.main.async(execute:{
-                    //                        let homePage = self.storyboard?.instantiateViewController(withIdentifier: "HomePageViewController") as! HomePageViewController
-                    //                        let appDelegate = UIApplication.shared.delegate
-                    //                        appDelegate?.window??.rootViewController = homePage
-                    //                    })
                 }
             }
             catch{

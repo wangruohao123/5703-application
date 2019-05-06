@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftKeychainWrapper
+import GoogleSignIn
 
 class MoreVC: UIViewController {
     var abouttitle = ["About Us","FAQs","Glossary of term"]
@@ -28,6 +29,7 @@ class MoreVC: UIViewController {
     }
     @IBAction func logoutTapped(_ sender: Any) {
         KeychainWrapper.standard.removeObject(forKey: "accessToken")
+        GIDSignIn.sharedInstance()?.signOut()
         UserDefaults.standard.removeObject(forKey: "username")
         let signInPage = self.storyboard?.instantiateViewController(withIdentifier: "UIViewController") as! UIViewController
         let appDelegate = UIApplication.shared.delegate

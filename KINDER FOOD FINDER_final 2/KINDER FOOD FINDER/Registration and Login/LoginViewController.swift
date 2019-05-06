@@ -57,7 +57,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
             return ;}
         // send user data to server side
         
-        let myUrl = NSURL(string: "http://ec2-52-64-193-227.ap-southeast-2.compute.amazonaws.com:8000/users/login")
+        let myUrl = NSURL(string: "http://ec2-13-239-136-215.ap-southeast-2.compute.amazonaws.com:8000/users/login")
         let request = NSMutableURLRequest(url: myUrl! as URL)
         request.httpMethod = "POST"
         
@@ -75,25 +75,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
             print(response ?? "")
             print(json ?? "")
             var err: NSError?
-            //            let json:AnyObject?
-            //            do {
-            //                json = try JSONSerialization.jsonObject(with: data!, options: [])as? NSDictionary
-            //            }
-            //            catch{
-            //                return
-            //            }
-            //            if let parsejSON = json{
-            //                var resultValue = parsejSON["status"] as? String
-            //                print("result: \(resultValue)")
-            //
-            //                if(resultValue=="Success") {
-            //                    //login is successful
-            //                    UserDefaults.standard.set(true,forKey: "isUserLoggedIn")
-            //                    UserDefaults.standard.synchronize();
-            //                    self.dismiss(animated: true, completion: nil)
-            //                }
-            //            }
-            
+
             do {
                 
                 let httpResponse = response as! HTTPURLResponse
