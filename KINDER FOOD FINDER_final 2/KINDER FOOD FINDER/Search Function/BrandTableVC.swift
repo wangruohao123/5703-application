@@ -172,10 +172,10 @@ class BrandTableVC: UITableViewController , UISearchResultsUpdating{
             destination.Rawdata = sc.isActive ? searchResults[row] :
                 Rawdatas[row]
             
-            let brand_name = searchResults[row].product_name
+            let brand_name = Rawdatas[row].product_name
             let user_age = UserDefaults.standard.string(forKey: "age")
             let user_gender = UserDefaults.standard.string(forKey: "gender")
-            let product_type = searchResults[row].product_category
+            let product_type = Rawdatas[row].product_category
             let myUrl = NSURL(string: "http://ec2-13-239-136-215.ap-southeast-2.compute.amazonaws.com:8000/feedback/")
             let request = NSMutableURLRequest(url: myUrl! as URL)
             request.httpMethod = "POST"
