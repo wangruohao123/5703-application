@@ -52,7 +52,8 @@ class BrandTableVC: UITableViewController , UISearchResultsUpdating{
     
     
     func loadJson() {
-        let jsonUrlString = "https://api.myjson.com/bins/177jqw"
+        //let jsonUrlString = "https://api.myjson.com/bins/177jqw"
+        let jsonUrlString = "http://ec2-13-239-136-215.ap-southeast-2.compute.amazonaws.com:8000/products/data?format=json"
         guard let url = URL(string: jsonUrlString)  else {
             return
         }
@@ -134,9 +135,9 @@ class BrandTableVC: UITableViewController , UISearchResultsUpdating{
         {
             (_, _, completion) in
             let text = "This is the \(self.Rawdatas[indexPath.row].product_name), the rating is \(self.Rawdatas[indexPath.row].rating), the accreditation is \(self.Rawdatas[indexPath.row].accreditation). "
-            let image = UIImage(named: self.Rawdatas[indexPath.row].image_label)!
-            let ac = UIActivityViewController(activityItems: [text, image], applicationActivities: nil)
-            
+           // let image = UIImage(named: self.Rawdatas[indexPath.row].image_label)!
+          //  let ac = UIActivityViewController(activityItems: [text, image], applicationActivities: nil)
+             let ac = UIActivityViewController(activityItems: [text], applicationActivities: nil)
             if let pc = ac.popoverPresentationController {
                 if let cell = tableView.cellForRow(at: indexPath) {
                     pc.sourceView = cell

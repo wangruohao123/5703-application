@@ -22,9 +22,23 @@ class BrowserTableVC: UITableViewController{
 //title of dat
     var feildsTitles = [Array<String>]()
 
-// download and parse JSON
+    @IBAction func refreshData(_ sender: UIBarButtonItem) {
+      /*  DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.loadJson()
+            self.loadFields()
+        }
+        */
+        DispatchQueue.main.async(execute: {
+            self.loadJson()
+            self.loadFields()
+            self.tableView.reloadData()
+        })
+    }
+    // download and parse JSON
     func loadJson() {
-        let jsonUrlString = "https://api.myjson.com/bins/177jqw"
+        //let jsonUrlString = "https://api.myjson.com/bins/177jqw"
+        let jsonUrlString = "http://ec2-13-239-136-215.ap-southeast-2.compute.amazonaws.com:8000/products/data?format=json"
         guard let url = URL(string: jsonUrlString)  else {
             return
         }
@@ -35,6 +49,7 @@ class BrowserTableVC: UITableViewController{
                 self.rawdatas = try JSONDecoder().decode([Rawdata].self, from: data)
                 DispatchQueue.main.async(execute: {
                     self.loadFields()
+                    print(data)
                 })
                 
             }catch let jsonErr{

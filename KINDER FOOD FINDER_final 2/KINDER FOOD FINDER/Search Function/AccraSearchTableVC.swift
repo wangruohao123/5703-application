@@ -64,7 +64,7 @@ class AccraSearchTableVC: UITableViewController , UISearchResultsUpdating{
 
 // download and parse JSON
     func loadJson(){
-        let jsonUrlString = "   "
+        let jsonUrlString = "http://ec2-13-239-136-215.ap-southeast-2.compute.amazonaws.com:8000/products/data?format=json"
         guard let url = URL(string: jsonUrlString)  else {
             return
         }
@@ -134,9 +134,9 @@ override func didReceiveMemoryWarning() {
         {
             (_, _, completion) in
             let text = "This is the \(self.Rawdatas[indexPath.row].product_name), the rating is \(self.Rawdatas[indexPath.row].rating), the accreditation is \(self.Rawdatas[indexPath.row].accreditation). "
-            let image = UIImage(named: self.Rawdatas[indexPath.row].image_label)!
-            let ac = UIActivityViewController(activityItems: [text, image], applicationActivities: nil)
-            
+           // let image = UIImage(named: self.Rawdatas[indexPath.row].image_label)!
+        //let ac = UIActivityViewController(activityItems: [text, image], applicationActivities: nil)
+            let ac = UIActivityViewController(activityItems: [text], applicationActivities: nil)
             if let pc = ac.popoverPresentationController {
                 if let cell = tableView.cellForRow(at: indexPath) {
                     pc.sourceView = cell
@@ -172,6 +172,34 @@ override func didReceiveMemoryWarning() {
             let destination = segue.destination as! DetailController
             destination.Rawdata = sc.isActive ? searchResults[row] :
                 Rawdatas[row]
+            let brand_name = Rawdatas[row].product_name
+            let user_age = UserDefaults.standard.string(forKey: "age")
+            let user_gender = UserDefaults.standard.string(forKey: "gender")
+            let product_type = Rawdatas[row].product_category
+            let myUrl = NSURL(string: "http://ec2-13-239-136-215.ap-southeast-2.compute.amazonaws.com:8000/feedback/")
+            let request = NSMutableURLRequest(url: myUrl! as URL)
+            request.httpMethod = "POST"
+            let postString = "brand_name=\(brand_name ?? "")&user_age=\(user_age ?? "")&user_gender=\(user_gender ?? "")&product_type=\(product_type ?? "")";
+            request.httpBody = postString.data(using: String.Encoding.utf8);
+            print(postString)
+            let task = URLSession.shared.dataTask(with: request as URLRequest){
+                data, response, error in
+                if error != nil{
+                    print("error=\(error)")
+                    return
+                }
+                let json = try? JSON(data: data!)
+                print("___________")
+                print(response ?? "")
+                print(json ?? "")
+                let httpResponse = response as! HTTPURLResponse
+                let code = httpResponse.statusCode
+                var result: Double = Double(code)
+                print(code)
+            }
+            task.resume()
+            
+            
         }
     }
 }
