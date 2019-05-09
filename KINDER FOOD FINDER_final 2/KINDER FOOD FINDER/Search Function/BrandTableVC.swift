@@ -167,12 +167,38 @@ class BrandTableVC: UITableViewController , UISearchResultsUpdating{
   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
-            
-            
             let row = tableView.indexPathForSelectedRow!.row
             let destination = segue.destination as! DetailController
             destination.Rawdata = sc.isActive ? searchResults[row] :
                 Rawdatas[row]
+            
+            let brand_name = searchResults[row].product_name
+            let user_age = UserDefaults.standard.string(forKey: "age")
+            let user_gender = UserDefaults.standard.string(forKey: "gender")
+            let product_type = searchResults[row].product_category
+            let myUrl = NSURL(string: "http://ec2-13-239-136-215.ap-southeast-2.compute.amazonaws.com:8000/feedback/")
+            let request = NSMutableURLRequest(url: myUrl! as URL)
+            request.httpMethod = "POST"
+            let postString = "brand_name=\(brand_name ?? "")&user_age=\(user_age ?? "")&user_gender=\(user_gender ?? "")&product_type=\(product_type ?? "")";
+            request.httpBody = postString.data(using: String.Encoding.utf8);
+            print(postString)
+            let task = URLSession.shared.dataTask(with: request as URLRequest){
+                data, response, error in
+                if error != nil{
+                    print("error=\(error)")
+                    return
+                }
+                let json = try? JSON(data: data!)
+                print("___________")
+                print(response ?? "")
+                print(json ?? "")
+                let httpResponse = response as! HTTPURLResponse
+                let code = httpResponse.statusCode
+                var result: Double = Double(code)
+                print(code)
+            }
+            task.resume()
+          
         }
         
     }

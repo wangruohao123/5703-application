@@ -64,7 +64,7 @@ class AccraSearchTableVC: UITableViewController , UISearchResultsUpdating{
 
 // download and parse JSON
     func loadJson(){
-        let jsonUrlString = "https://api.myjson.com/bins/177jqw"
+        let jsonUrlString = "   "
         guard let url = URL(string: jsonUrlString)  else {
             return
         }

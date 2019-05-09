@@ -92,7 +92,12 @@ class WelcomeViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDel
                             var result: Double = Double(code)
                             print(code)
                             if(result == 400){
+                                let json2 = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                                let age = json2!["age"] as? String
+                                let gender = json2!["gender"] as? String
                                 UserDefaults.standard.set(email,forKey: "username");
+                                UserDefaults.standard.set(age,forKey: "age")
+                                UserDefaults.standard.set(gender, forKey: "gender")
                                 UserDefaults.standard.synchronize();
                                 DispatchQueue.main.async(execute:{
                                     let homePage = self.storyboard?.instantiateViewController(withIdentifier: "UITabBarController") as! UITabBarController

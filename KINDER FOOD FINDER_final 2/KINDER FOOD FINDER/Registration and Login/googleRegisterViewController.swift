@@ -98,6 +98,8 @@ class GoogleRegisterViewController: UIViewController, UITextFieldDelegate, UIPic
             print(json ?? "00")
                 //self.dismiss(animated: true, completion: nil)
             UserDefaults.standard.set(username,forKey: "username");
+            UserDefaults.standard.set(age,forKey: "age")
+            UserDefaults.standard.set(genderOfUser, forKey: "gender")
             UserDefaults.standard.synchronize();
                 DispatchQueue.main.async(execute:{
                     let homePage = self.storyboard?.instantiateViewController(withIdentifier: "UITabBarController") as! UITabBarController

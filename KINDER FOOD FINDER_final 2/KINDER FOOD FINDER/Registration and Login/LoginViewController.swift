@@ -94,12 +94,16 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
                 if(result==200){
                     let json2 = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
                     let accessToken = json2!["token"] as? String
+                    let age = json2!["age"] as? String
+                    let gender = json2!["gender"] as? String
                     let saveToken: Bool = KeychainWrapper.standard.set(accessToken!, forKey: "accessToken")
                     //                                UserDefaults.standard.set(true,forKey: "isUserLoggedIn")
                     //                                UserDefaults.standard.synchronize();
                     //                                self.dismiss(animated: true, completion: nil)
                     //store data in local
                     UserDefaults.standard.set(username,forKey: "username");
+                    UserDefaults.standard.set(age,forKey: "age")
+                    UserDefaults.standard.set(gender, forKey: "gender")
                     UserDefaults.standard.synchronize();
                     DispatchQueue.main.async(execute:{
                         let homePage = self.storyboard?.instantiateViewController(withIdentifier: "UITabBarController") as! UITabBarController

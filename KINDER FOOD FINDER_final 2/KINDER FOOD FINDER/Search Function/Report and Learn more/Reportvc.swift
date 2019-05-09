@@ -14,8 +14,8 @@ class Reportvc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     var locationManager:CLLocationManager!
     var Rawdata : Rawdata!
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var productIdTextField: UITextField!
-    @IBOutlet weak var productNameTextField: UITextField!
+    @IBOutlet weak var productNameLabel: UILabel!
+    
     @IBOutlet weak var coordinateTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var reportButton: UIButton!
@@ -25,8 +25,7 @@ class Reportvc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         mapView.delegate = self
         let longTapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap))
         mapView.addGestureRecognizer(longTapGesture)
-        productIdTextField.text = String(Rawdata.id)
-        productNameTextField.text = Rawdata.product_name
+        productNameLabel.text = Rawdata.product_name
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         // Do any additional setup after loading the view.
     }
@@ -151,12 +150,12 @@ class Reportvc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     
     @IBAction func reportButtonTapped(_ sender: Any) {
-        let productId = productIdTextField.text
-        let productName = productNameTextField.text
+        let productId = String(Rawdata.id)
+        let productName = Rawdata.product_name
         let coordinate = coordinateTextField.text
         let description = descriptionTextField.text
         
-        if(productId!.isEmpty || productName!.isEmpty||coordinate!.isEmpty||description!.isEmpty) {
+        if(productName.isEmpty||coordinate!.isEmpty||description!.isEmpty) {
             displayMyAlertMessage(userMessage: "All the field cannot be empty")
             return ;}
         // send user data to server side
@@ -166,6 +165,7 @@ class Reportvc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         request.httpMethod = "POST"
         
         let postString = "product_id=\(productId ?? "")&product_name=\(productName ?? "")&coordinate=\(coordinate ?? "")&location_description=\(description ?? "")";
+
         request.httpBody = postString.data(using: String.Encoding.utf8);
         print(postString)
         let task = URLSession.shared.dataTask(with: request as URLRequest){

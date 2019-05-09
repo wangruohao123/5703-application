@@ -31,6 +31,8 @@ class MoreVC: UIViewController {
         KeychainWrapper.standard.removeObject(forKey: "accessToken")
         GIDSignIn.sharedInstance()?.signOut()
         UserDefaults.standard.removeObject(forKey: "username")
+        UserDefaults.standard.removeObject(forKey: "age")
+        UserDefaults.standard.removeObject(forKey: "gender")
         let signInPage = self.storyboard?.instantiateViewController(withIdentifier: "UIViewController") as! UIViewController
         let appDelegate = UIApplication.shared.delegate
         appDelegate?.window??.rootViewController = signInPage
