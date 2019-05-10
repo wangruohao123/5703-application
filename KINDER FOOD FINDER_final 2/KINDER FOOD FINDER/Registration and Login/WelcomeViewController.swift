@@ -51,75 +51,92 @@ class WelcomeViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDel
         print("sign in dismissed")
     }
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!){
-        let userId = user.userID                  // For client-side use only!
-        let idToken = user.authentication.idToken // Safe to send to the server
-        let fullName = user.profile.name
-        let givenName = user.profile.givenName
-        let familyName = user.profile.familyName
-        let email = user.profile.email
+        if let error = error {
+            print("\(error.localizedDescription)")
+            NotificationCenter.default.post(
+                name: Notification.Name(rawValue: "ToggleAuthUINotification"), object: nil, userInfo: nil)
+        } else {
+            let userId = user.userID                  // For client-side use only!
+            let idToken = user.authentication.idToken // Safe to send to the server
+            let fullName = user.profile.name
+            let givenName = user.profile.givenName
+            let familyName = user.profile.familyName
+            let email = user.profile.email
+            // [START_EXCLUDE]
+            NotificationCenter.default.post(
+                name: Notification.Name(rawValue: "ToggleAuthUINotification"),
+                object: nil,
+                userInfo: ["statusText": "Signed in user:\n\(fullName)"])
+            // [END_EXCLUDE]
+            UserDefaults.standard.set(idToken,forKey: "idToken");
+            UserDefaults.standard.set(email,forKey: "email");
+            UserDefaults.standard.synchronize();
+            let myUrl = NSURL(string: "http://ec2-13-239-136-215.ap-southeast-2.compute.amazonaws.com:8000/google_auth/")
+            let request = NSMutableURLRequest(url: myUrl! as URL)
+            request.httpMethod = "POST"
+            
+            let postString = "username=\(email ?? "")";
+            request.httpBody = postString.data(using: String.Encoding.utf8);
+            
+            let task = URLSession.shared.dataTask(with: request as URLRequest){
+                data, response, error in
+                if error != nil{
+                    print("error=\(error)")
+                    return
+                }
+                let json = try? JSON(data: data!)
+                print("___________")
+                print(response ?? "")
+                print(json ?? "")
+                var err: NSError?
+                
+                do {
+                    
+                    let httpResponse = response as! HTTPURLResponse
+                    let code = httpResponse.statusCode
+                    var result: Double = Double(code)
+                    print(code)
+                    if(result == 400){
+                        let json2 = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                        let age = json2!["age"] as? String
+                        let gender = json2!["gender"] as? String
+                        UserDefaults.standard.set(email,forKey: "username");
+                        UserDefaults.standard.set(age,forKey: "age")
+                        UserDefaults.standard.set(gender, forKey: "gender")
+                        UserDefaults.standard.synchronize();
+                        DispatchQueue.main.async(execute:{
+                            let homePage = self.storyboard?.instantiateViewController(withIdentifier: "UITabBarController") as! UITabBarController
+                            let appDelegate = UIApplication.shared.delegate
+                            appDelegate?.window??.rootViewController = homePage
+                        })
+                        
+                    }
+                    if(result==201){
+                        DispatchQueue.main.async(execute:{
+                            let homePage = self.storyboard?.instantiateViewController(withIdentifier: "GoogleRegisterViewController") as! GoogleRegisterViewController
+                            let appDelegate = UIApplication.shared.delegate
+                            appDelegate?.window??.rootViewController = homePage
+                        })
+                    }
+                }
+                catch{
+                    return
+                }
+                
+                
+            }
+            task.resume()
+        }
+        
+    }
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
+              withError error: Error!) {
+        // Perform any operations when the user disconnects from app here.
         // [START_EXCLUDE]
         NotificationCenter.default.post(
             name: Notification.Name(rawValue: "ToggleAuthUINotification"),
             object: nil,
-            userInfo: ["statusText": "Signed in user:\n\(fullName)"])
+            userInfo: ["statusText": "User has disconnected."])
         // [END_EXCLUDE]
-                    UserDefaults.standard.set(idToken,forKey: "idToken");
-                    UserDefaults.standard.set(email,forKey: "email");
-                    UserDefaults.standard.synchronize();
-                    let myUrl = NSURL(string: "http://ec2-13-239-136-215.ap-southeast-2.compute.amazonaws.com:8000/google_auth/")
-                    let request = NSMutableURLRequest(url: myUrl! as URL)
-                    request.httpMethod = "POST"
-        
-                    let postString = "username=\(email ?? "")";
-                    request.httpBody = postString.data(using: String.Encoding.utf8);
-        
-                    let task = URLSession.shared.dataTask(with: request as URLRequest){
-                        data, response, error in
-                        if error != nil{
-                            print("error=\(error)")
-                            return
-                        }
-                        let json = try? JSON(data: data!)
-                        print("___________")
-                        print(response ?? "")
-                        print(json ?? "")
-                        var err: NSError?
-        
-                        do {
-        
-                            let httpResponse = response as! HTTPURLResponse
-                            let code = httpResponse.statusCode
-                            var result: Double = Double(code)
-                            print(code)
-                            if(result == 400){
-                                let json2 = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
-                                let age = json2!["age"] as? String
-                                let gender = json2!["gender"] as? String
-                                UserDefaults.standard.set(email,forKey: "username");
-                                UserDefaults.standard.set(age,forKey: "age")
-                                UserDefaults.standard.set(gender, forKey: "gender")
-                                UserDefaults.standard.synchronize();
-                                DispatchQueue.main.async(execute:{
-                                    let homePage = self.storyboard?.instantiateViewController(withIdentifier: "UITabBarController") as! UITabBarController
-                                    let appDelegate = UIApplication.shared.delegate
-                                    appDelegate?.window??.rootViewController = homePage
-                                })
-                                
-                            }
-                            if(result==201){
-                                DispatchQueue.main.async(execute:{
-                                    let homePage = self.storyboard?.instantiateViewController(withIdentifier: "GoogleRegisterViewController") as! GoogleRegisterViewController
-                                    let appDelegate = UIApplication.shared.delegate
-                                    appDelegate?.window??.rootViewController = homePage
-                                })
-                            }
-                        }
-                        catch{
-                            return
-                        }
-        
-        
-                    }
-                    task.resume()
     }
 }
