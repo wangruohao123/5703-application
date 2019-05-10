@@ -103,9 +103,9 @@ class BrowserResultVC: UITableViewController {
         {
             (_, _, completion) in
             let text = "This is the \(self.searchResults[indexPath.row].product_name), the rating is \(self.searchResults[indexPath.row].rating), the accreditation is \(self.searchResults[indexPath.row].accreditation). "
-            let image = UIImage(named: self.searchResults[indexPath.row].image_label)!
-            let ac = UIActivityViewController(activityItems: [text, image], applicationActivities: nil)
-            
+           // let image = UIImage(named: self.searchResults[indexPath.row].image_label)!
+           // let ac = UIActivityViewController(activityItems: [text, image], applicationActivities: nil)
+             let ac = UIActivityViewController(activityItems: [text], applicationActivities: nil)
             if let pc = ac.popoverPresentationController {
                 if let cell = tableView.cellForRow(at: indexPath) {
                     pc.sourceView = cell
