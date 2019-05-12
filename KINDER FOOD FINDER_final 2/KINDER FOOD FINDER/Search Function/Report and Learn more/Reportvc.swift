@@ -15,6 +15,9 @@ class Reportvc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     var Rawdata : Rawdata!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var productNameLabel: UILabel!
+    @IBOutlet weak var accreditationLabel: UILabel!
+    @IBOutlet weak var emailTextField: UITextField!
+    
     
     @IBOutlet weak var coordinateTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
@@ -27,6 +30,7 @@ class Reportvc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         mapView.addGestureRecognizer(longTapGesture)
         productNameLabel.text = Rawdata.product_name
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        accreditationLabel.text = Rawdata.accreditation
         // Do any additional setup after loading the view.
     }
     override func didReceiveMemoryWarning() {
@@ -154,8 +158,10 @@ class Reportvc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         let productName = Rawdata.product_name
         let coordinate = coordinateTextField.text
         let description = descriptionTextField.text
+        let accreditation = Rawdata.accreditation
+        let email = emailTextField.text
         
-        if(productName.isEmpty||coordinate!.isEmpty||description!.isEmpty) {
+        if(productName.isEmpty||coordinate!.isEmpty||description!.isEmpty||accreditation.isEmpty||email!.isEmpty) {
             displayMyAlertMessage(userMessage: "All the field cannot be empty")
             return ;}
         // send user data to server side
@@ -164,7 +170,7 @@ class Reportvc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         let request = NSMutableURLRequest(url: myUrl! as URL)
         request.httpMethod = "POST"
         
-        let postString = "product_id=\(productId ?? "")&product_name=\(productName ?? "")&coordinate=\(coordinate ?? "")&location_description=\(description ?? "")";
+        let postString = "product_id=\(productId ?? "")&product_name=\(productName ?? "")&coordinate=\(coordinate ?? "")&location_description=\(description ?? "")&accreditation=\(accreditation ?? "")&email=\(email ?? "")";
 
         request.httpBody = postString.data(using: String.Encoding.utf8);
         print(postString)

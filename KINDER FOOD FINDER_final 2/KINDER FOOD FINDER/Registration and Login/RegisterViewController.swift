@@ -28,7 +28,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         super.viewDidLoad()
         self.selectPickView.delegate = self as? UIPickerViewDelegate
         self.selectPickView.dataSource = self as? UIPickerViewDataSource
-      pickerData = ["Under 18","18-29","30-39","40-49","50-59","60+"]
+      pickerData = ["Prefer not to disclose","Under 18","18-29","30-39","40-49","50-59","60+"]
 
         // Do any additional setup after loading the view.
     }
@@ -46,7 +46,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     }
     @IBAction func appTapped(_ sender: Any) {
         selectPickView.isHidden = false
-        self.ageTextField.text = "Under 18"
+        self.ageTextField.text = "Prefer not to disclose"
     }
     
     @IBAction func appTappedOver(_ sender: Any) {
@@ -59,6 +59,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
             gender = "Male"
         case 1 :
             gender = "Female"
+        case 2 :
+            gender = "secret"
         default:
             break
         }
@@ -87,7 +89,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
             displayMyAlertMessage(userMessage: "Email format is not correct")
             return;
         }
-        if(age?.elementsEqual("Under 18")==false&&age?.elementsEqual("18-29")==false&&age?.elementsEqual("30-39")==false&&age?.elementsEqual("40-49")==false&&age?.elementsEqual("50-59")==false&&age?.elementsEqual("60+")==false){
+        if(age?.elementsEqual("Under 18")==false&&age?.elementsEqual("18-29")==false&&age?.elementsEqual("30-39")==false&&age?.elementsEqual("40-49")==false&&age?.elementsEqual("50-59")==false&&age?.elementsEqual("60+")==false&&age?.elementsEqual("Prefer not to disclose")==false){
             displayMyAlertMessage(userMessage: "Age must choose the specific group")
             return;
         }

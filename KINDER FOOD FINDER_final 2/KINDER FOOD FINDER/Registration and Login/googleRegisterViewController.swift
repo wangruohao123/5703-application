@@ -22,7 +22,7 @@ class GoogleRegisterViewController: UIViewController, UITextFieldDelegate, UIPic
         super.viewDidLoad()
         self.selectPickView.delegate = self as? UIPickerViewDelegate
         self.selectPickView.dataSource = self as? UIPickerViewDataSource
-        pickerData = ["Under 18","18-29","30-39","40-49","50-59","60+"]
+        pickerData = ["Prefer not to disclose","Under 18","18-29","30-39","40-49","50-59","60+"]
         usernameTextField.text = UserDefaults.standard.string(forKey: "email")
         emailTextField.text = UserDefaults.standard.string(forKey: "email")
 
@@ -46,6 +46,8 @@ class GoogleRegisterViewController: UIViewController, UITextFieldDelegate, UIPic
             gender = "Male"
         case 1 :
             gender = "Female"
+        case 2 :
+            gender = "secret"
         default:
             break
         }
@@ -53,7 +55,7 @@ class GoogleRegisterViewController: UIViewController, UITextFieldDelegate, UIPic
     
     @IBAction func appTapped(_ sender: Any) {
         selectPickView.isHidden = false
-        self.ageTextField.text = "Under 18"
+        self.ageTextField.text = "Prefer not to disclose"
     }
     @IBAction func appTappedOver(_ sender: Any) {
         selectPickView.isHidden = true
@@ -69,7 +71,7 @@ class GoogleRegisterViewController: UIViewController, UITextFieldDelegate, UIPic
             displayMyAlertMessage(userMessage: "All fields are required")
             return;
         }
-        if(age?.elementsEqual("Under 18")==false&&age?.elementsEqual("18-29")==false&&age?.elementsEqual("30-39")==false&&age?.elementsEqual("40-49")==false&&age?.elementsEqual("50-59")==false&&age?.elementsEqual("60+")==false){
+        if(age?.elementsEqual("Under 18")==false&&age?.elementsEqual("18-29")==false&&age?.elementsEqual("30-39")==false&&age?.elementsEqual("40-49")==false&&age?.elementsEqual("50-59")==false&&age?.elementsEqual("60+")==false&&age?.elementsEqual("Prefer not to disclose")==false){
             displayMyAlertMessage(userMessage: "Age must choose the specific group")
             return;
         }

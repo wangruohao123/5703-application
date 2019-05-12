@@ -129,14 +129,14 @@ class WelcomeViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDel
         }
         
     }
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
-              withError error: Error!) {
-        // Perform any operations when the user disconnects from app here.
-        // [START_EXCLUDE]
-        NotificationCenter.default.post(
-            name: Notification.Name(rawValue: "ToggleAuthUINotification"),
-            object: nil,
-            userInfo: ["statusText": "User has disconnected."])
-        // [END_EXCLUDE]
-    }
+//    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
+//              withError error: Error!) {
+//        // Perform any operations when the user disconnects from app here.
+//        // [START_EXCLUDE]
+//        NotificationCenter.default.post(
+//            name: Notification.Name(rawValue: "ToggleAuthUINotification"),
+//            object: nil,
+//            userInfo: ["statusText": "User has disconnected."])
+//        // [END_EXCLUDE]
+//    }
 }
