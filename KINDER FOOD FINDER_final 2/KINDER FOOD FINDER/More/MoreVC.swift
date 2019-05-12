@@ -11,7 +11,7 @@ import SwiftKeychainWrapper
 import GoogleSignIn
 
 class MoreVC: UIViewController {
-    var abouttitle = ["About Us","FAQs","Glossary of term"]
+    var abouttitle = ["About Us","FAQs","Glossary"]
 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var emailLbl: UILabel!
