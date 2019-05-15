@@ -29,9 +29,36 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         self.selectPickView.delegate = self as? UIPickerViewDelegate
         self.selectPickView.dataSource = self as? UIPickerViewDataSource
       pickerData = ["Prefer not to disclose","Under 18","18-29","30-39","40-49","50-59","60+"]
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+
 
         // Do any additional setup after loading the view.
     }
+    @objc func handleTap(sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            self.usernameTextField.resignFirstResponder()//username放弃第一响应者
+            self.passwordTextField.resignFirstResponder()//password放弃第一响应者
+            self.ageTextField.resignFirstResponder()
+            self.emailTextField.resignFirstResponder()
+            self.repeatPasswordTextField.resignFirstResponder()
+        }
+        sender.cancelsTouchesInView = false
+    }
+//    @objc func keyboardWillShow(notification: NSNotification) {
+//        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+//            if self.view.frame.origin.y == 0 {
+//                self.view.frame.origin.y -= keyboardSize.height
+//            }
+//        }
+//    }
+//    
+//    @objc func keyboardWillHide(notification: NSNotification) {
+//        if self.view.frame.origin.y != 0 {
+//            self.view.frame.origin.y = 0
+//        }
+//    }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -47,6 +74,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     @IBAction func appTapped(_ sender: Any) {
         selectPickView.isHidden = false
         self.ageTextField.text = "Prefer not to disclose"
+        let hideKeyboardView = UIView()
+        self.ageTextField.inputView = hideKeyboardView
     }
     
     @IBAction func appTappedOver(_ sender: Any) {
@@ -133,58 +162,13 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
                 //print(postString)
                 self.dismiss(animated: true, completion: nil)
             }
-            //处理json
-            //            if let parsejSON = json{
-            //                var resultValue = parsejSON["status"] as? String
-            //                print("result: \(resultValue)")
-            //                var isUserRegistered:Bool = false;
-            //                if(resultValue=="Success") { isUserRegistered = true;}
-            //
-            //
-            //                var messageToDisplay: String = parsejSON["message"] as! String!;
-            //                if(!isUserRegistered){
-            //                    messageToDisplay = parsejSON["message"] as! String!;
-            //
-            //                }
-            //                DispatchQueue.main.async(execute:{
-            //                    var myAlert = UIAlertController(title: "Alert", message: messageToDisplay, preferredStyle: UIAlertController.Style.alert);
-            //                    let okAction = UIAlertAction(title: "ok", style: UIAlertAction.Style.default){
-            //                        action in
-            //                        self.dismiss(animated: true,completion: nil);
-            //                    }
-            //                    myAlert.addAction(okAction);
-            //                    self.present(myAlert, animated:true, completion:nil);
-            //                })
-            //
-            //
-            //
-            //                dispatch_async(dispatch_get_main_queue(),{
-            //                    var myAlert = UIAlertController(title: "Alert", message: messageToDisplay, preferredStyle: UIAlertController.Style.alert);
-            //                    let okAction = UIAlertAction(title: "ok", style: UIAlertAction.Style.default,handler: nil){ action in self.dismiss(animated: true,completion: nil);
-            //                        }
-            //                        myAlert.addAction(okAction);
-            //                        self.presentViewController(myAlert, animated:true, completion:nil);
-            //                });
-            //
-            //                }
-            
+       
         }
         task.resume()
-        
-        //store data in local
-        //        UserDefaults.standard.set(userEmail,forKey: "userEmail");
-        //        UserDefaults.standard.set(userPassword,forKey: "userPassword");
-        //        UserDefaults.standard.synchronize();
-        
-        //display alert message with confirmation
-        //        var myAlert = UIAlertController(title: "Alert", message: "Registeration is successful", preferredStyle: UIAlertController.Style.alert);
-        //        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default){
-        //            action in
-        //            self.dismiss(animated: true,completion: nil)
-        //        }
-        //        myAlert.addAction(okAction);
-        //        self.present(myAlert, animated: true,completion: nil)
+   
     }
+   
+   
     func displayMyAlertMessage(userMessage:String){
         var myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertController.Style.alert)
         let okAction = UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil)

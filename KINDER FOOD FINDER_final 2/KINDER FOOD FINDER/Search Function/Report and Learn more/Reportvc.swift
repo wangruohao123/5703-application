@@ -32,6 +32,9 @@ class Reportvc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         accreditationLabel.text = Rawdata.accreditation
         // Do any additional setup after loading the view.
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -67,7 +70,27 @@ class Reportvc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     //
     //        view.addSubview(mapView)
     //    }
+    @objc func handleTap(sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            self.coordinateTextField.resignFirstResponder()
+            self.emailTextField.resignFirstResponder()
+            self.descriptionTextField.resignFirstResponder()
+        }
+        sender.cancelsTouchesInView = false
+    }
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
     
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
     func determineCurrentLocation()
     {
         locationManager = CLLocationManager()
@@ -152,6 +175,7 @@ class Reportvc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         }
     }
     
+  
     
     @IBAction func reportButtonTapped(_ sender: Any) {
         let productId = String(Rawdata.id)
@@ -203,6 +227,10 @@ class Reportvc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
                 if(result==201){
                     DispatchQueue.main.async(execute:{
                         self.displayMyAlertMessage(userMessage: "Report successful")
+                            let homePage = self.storyboard?.instantiateViewController(withIdentifier: "UITabBarController") as! UITabBarController
+                            let appDelegate = UIApplication.shared.delegate
+                            appDelegate?.window??.rootViewController = homePage
+  
                     })
                 }
             }

@@ -10,7 +10,7 @@ import UIKit
 import SwiftKeychainWrapper
 import GoogleSignIn
 
-class LoginViewController: UIViewController, GIDSignInUIDelegate {
+class LoginViewController: UIViewController, GIDSignInUIDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -20,9 +20,19 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().uiDelegate = self
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+
 
         // Do any additional setup after loading the view.
     }
+    @objc func handleTap(sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            self.usernameTextField.resignFirstResponder()//username放弃第一响应者
+            self.passwordTextField.resignFirstResponder()//password放弃第一响应者
+        }
+        sender.cancelsTouchesInView = false
+    }
+    
     @IBAction func SignOutButton(_ sender: Any) {
         GIDSignIn.sharedInstance()?.signOut()
     }
@@ -63,6 +73,9 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         
         let postString = "username=\(username ?? "")&password=\(userPassword ?? "")";
         request.httpBody = postString.data(using: String.Encoding.utf8);
+                self.usernameTextField.resignFirstResponder()//username放弃第一响应者
+                self.passwordTextField.resignFirstResponder()//password放弃第一响应者
+  
         
         let task = URLSession.shared.dataTask(with: request as URLRequest){
             data, response, error in
@@ -121,7 +134,6 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         task.resume()
     }
 
-    
     func displayMyAlertMessage(userMessage:String){
         var myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertController.Style.alert)
         let okAction = UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil)

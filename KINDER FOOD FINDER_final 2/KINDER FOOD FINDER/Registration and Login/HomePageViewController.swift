@@ -15,7 +15,6 @@ class HomePageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         usernameTextField.text = UserDefaults.standard.string(forKey: "username")
-
     }
 
     @IBAction func logoutButtonTapped(_ sender: Any) {
@@ -25,5 +24,4 @@ class HomePageViewController: UIViewController {
         let appDelegate = UIApplication.shared.delegate
         appDelegate?.window??.rootViewController = signInPage
     }
-    
 }

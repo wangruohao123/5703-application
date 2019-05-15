@@ -25,9 +25,34 @@ class GoogleRegisterViewController: UIViewController, UITextFieldDelegate, UIPic
         pickerData = ["Prefer not to disclose","Under 18","18-29","30-39","40-49","50-59","60+"]
         usernameTextField.text = UserDefaults.standard.string(forKey: "email")
         emailTextField.text = UserDefaults.standard.string(forKey: "email")
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+
+
 
         // Do any additional setup after loading the view.
     }
+    @objc func handleTap(sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            self.ageTextField.resignFirstResponder()
+            self.emailTextField.resignFirstResponder()
+        }
+        sender.cancelsTouchesInView = false
+    }
+//    @objc func keyboardWillShow(notification: NSNotification) {
+//        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+//            if self.view.frame.origin.y == 0 {
+//                self.view.frame.origin.y -= keyboardSize.height
+//            }
+//        }
+//    }
+//
+//    @objc func keyboardWillHide(notification: NSNotification) {
+//        if self.view.frame.origin.y != 0 {
+//            self.view.frame.origin.y = 0
+//        }
+//    }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -56,6 +81,8 @@ class GoogleRegisterViewController: UIViewController, UITextFieldDelegate, UIPic
     @IBAction func appTapped(_ sender: Any) {
         selectPickView.isHidden = false
         self.ageTextField.text = "Prefer not to disclose"
+        let hideKeyboardView = UIView()
+        self.ageTextField.inputView = hideKeyboardView
     }
     @IBAction func appTappedOver(_ sender: Any) {
         selectPickView.isHidden = true
@@ -113,6 +140,8 @@ class GoogleRegisterViewController: UIViewController, UITextFieldDelegate, UIPic
         }
         task.resume()
     }
+  
+    
     func displayMyAlertMessage(userMessage:String){
         var myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertController.Style.alert)
         let okAction = UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil)
