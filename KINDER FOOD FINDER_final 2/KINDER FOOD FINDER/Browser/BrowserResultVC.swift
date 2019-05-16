@@ -15,8 +15,7 @@ class BrowserResultVC: UITableViewController {
     var rawdatas: [Rawdata] = []
     var searchString:String = ""
     var searchResults: [Rawdata] = []
-    var favorites: [Favorite] = []
-    
+  
     
 // this is the third layer, display all product information based on current feild(different types of category, accreditation or rating), filter results by selected fields
     func searchFilter(text: String){
@@ -36,35 +35,14 @@ class BrowserResultVC: UITableViewController {
         }
     }
     
-    @IBAction func favBtnTap(_ sender: UIButton) {
-        let btnPos = sender.convert(CGPoint.zero, to: self.tableView)
-        let indexPath = tableView.indexPathForRow(at: btnPos)!
-        self.favorites[indexPath.row].FIELD6 = !self.favorites[indexPath.row].FIELD6
-        
-        let cell = tableView.cellForRow(at: indexPath) as! CardCell
-        
-        cell.favorite = self.favorites[indexPath.row].FIELD6
-    }
+
     
-    
-    func loadJsonfav() {
-        let coder = JSONDecoder()
-        
-        do{
-            let url = Bundle.main.url(forResource: "favorite", withExtension: "json")!
-            let data = try Data(contentsOf: url)
-            favorites = try coder.decode([Favorite].self, from: data)
-        }
-        catch{
-            print(error)
-            
-        }
-    }
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         searchFilter(text: searchString)
         tableView.reloadData()
-        loadJsonfav()
+     
     }
     
     // MARK: - Table view data source
@@ -91,7 +69,7 @@ class BrowserResultVC: UITableViewController {
         cell.accradLabel.text = Rawdata.accreditation
         cell.brandLabel.text = Rawdata.product_name
         cell.backImageView.image = UIImage(named: Rawdata.image_label)
-        cell.favorite = favorites[indexPath.row].FIELD6
+      
         
         return cell
     }

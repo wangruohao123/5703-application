@@ -15,12 +15,12 @@ class AccraSearchTableVC: UITableViewController , UISearchResultsUpdating{
     var Rawdatas: [Rawdata] = []
     var sc: UISearchController!
     var searchResults: [Rawdata] = []
-    var favorites: [Favorite] = []
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadJson()
-        loadJsonfav()
+       
         sc = UISearchController(searchResultsController: nil)
         sc.searchResultsUpdater = self
         tableView.tableHeaderView = sc.searchBar
@@ -40,15 +40,7 @@ class AccraSearchTableVC: UITableViewController , UISearchResultsUpdating{
     
     
 // favorite feature
-   @IBAction func favBtnTap(_ sender: UIButton) {
-        let btnPos = sender.convert(CGPoint.zero, to: self.tableView)
-        let indexPath = tableView.indexPathForRow(at: btnPos)!
-       self.favorites[indexPath.row].FIELD6 = !self.favorites[indexPath.row].FIELD6
-
-       let cell = tableView.cellForRow(at: indexPath) as! CardCell
-
-        cell.favorite = self.favorites[indexPath.row].FIELD6
-   }
+  
     
     
     
@@ -85,19 +77,7 @@ class AccraSearchTableVC: UITableViewController , UISearchResultsUpdating{
     }
     
 // Parse local JSON
-    func loadJsonfav() {
-        let coder = JSONDecoder()
-        
-        do{
-            let url = Bundle.main.url(forResource: "favorite", withExtension: "json")!
-            let data = try Data(contentsOf: url)
-            favorites = try coder.decode([Favorite].self, from: data)
-        }
-        catch{
-            print(error)
-            
-        }
-    }
+
 // warn the memory
 override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -122,8 +102,7 @@ override func didReceiveMemoryWarning() {
         cell.accradLabel.text = Rawdata.accreditation
         cell.brandLabel.text = Rawdata.product_name
         cell.backImageView.image = UIImage(named: Rawdata.image_label)
-        cell.favorite = favorites[indexPath.row].FIELD6
-        
+     
        
         return cell
     }

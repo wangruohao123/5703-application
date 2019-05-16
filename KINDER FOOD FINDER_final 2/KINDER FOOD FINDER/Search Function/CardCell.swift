@@ -16,17 +16,7 @@ class CardCell: UITableViewCell {
     
     @IBOutlet weak var backImageView: UIImageView!
     // love shape change
-    var favorite = false {
-        willSet {
-            if newValue {
-                favBtn.setImage(#imageLiteral(resourceName: "fav"), for: .normal)
-                
-            }
-            else {
-                favBtn.setImage(#imageLiteral(resourceName: "unfav"), for: .normal)
-            }
-        }
-    }
+
     
     
     

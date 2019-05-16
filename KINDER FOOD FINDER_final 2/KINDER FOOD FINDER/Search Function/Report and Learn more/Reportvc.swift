@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class Reportvc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class Reportvc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate,UITextFieldDelegate {
     var locationManager:CLLocationManager!
     var Rawdata : Rawdata!
     @IBOutlet weak var mapView: MKMapView!
@@ -25,6 +25,8 @@ class Reportvc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailTextField.delegate = self
+        descriptionTextField.delegate = self
         mapView.delegate = self
         let longTapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap))
         mapView.addGestureRecognizer(longTapGesture)
@@ -32,9 +34,15 @@ class Reportvc: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         accreditationLabel.text = Rawdata.accreditation
         // Do any additional setup after loading the view.
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+    
+     self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailTextField.resignFirstResponder()
+        descriptionTextField.resignFirstResponder()
+        return true
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

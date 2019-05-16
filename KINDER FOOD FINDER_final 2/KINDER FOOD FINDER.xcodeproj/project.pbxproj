@@ -19,10 +19,8 @@
 		2876B0292277DFCF00E900AD /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2876B0262277DFCF00E900AD /* HomePageViewController.swift */; };
 		2876B02B2277E22900E900AD /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2876B02A2277E22900E900AD /* SwiftyJSON.swift */; };
 		37FADA3E227A2F9A00AA9D18 /* Reportvc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FADA3D227A2F9A00AA9D18 /* Reportvc.swift */; };
-		5CD45675227063A300E3000D /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD45674227063A300E3000D /* Favorite.swift */; };
 		812860466B367B16FCB9784C /* Pods_KINDER_FOOD_FINDER.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31AEF43902B501AFAA762D51 /* Pods_KINDER_FOOD_FINDER.framework */; };
 		9A7268AA225CB75B00E45BF4 /* BrowserResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7268A9225CB75B00E45BF4 /* BrowserResultVC.swift */; };
-		B92CE2E1227163A6004C241F /* favorite.json in Resources */ = {isa = PBXBuildFile; fileRef = B92CE2E0227163A6004C241F /* favorite.json */; };
 		B93AECBF2273272D00758E6E /* LearnMoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93AECBE2273272D00758E6E /* LearnMoreVC.swift */; };
 		B93BB34D2249CDFB00054AF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93BB34C2249CDFB00054AF5 /* AppDelegate.swift */; };
 		B93BB34F2249CDFB00054AF5 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = B93BB34E2249CDFB00054AF5 /* Home.swift */; };
@@ -61,10 +59,8 @@
 		2876B02A2277E22900E900AD /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		31AEF43902B501AFAA762D51 /* Pods_KINDER_FOOD_FINDER.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KINDER_FOOD_FINDER.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37FADA3D227A2F9A00AA9D18 /* Reportvc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reportvc.swift; sourceTree = "<group>"; };
-		5CD45674227063A300E3000D /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		87DF8843A6CD8E9FAA5545F6 /* Pods-KINDER FOOD FINDER.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KINDER FOOD FINDER.release.xcconfig"; path = "Target Support Files/Pods-KINDER FOOD FINDER/Pods-KINDER FOOD FINDER.release.xcconfig"; sourceTree = "<group>"; };
 		9A7268A9225CB75B00E45BF4 /* BrowserResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserResultVC.swift; sourceTree = "<group>"; };
-		B92CE2E0227163A6004C241F /* favorite.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = favorite.json; sourceTree = "<group>"; };
 		B93AECBE2273272D00758E6E /* LearnMoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnMoreVC.swift; sourceTree = "<group>"; };
 		B93BB3492249CDFB00054AF5 /* KINDER FOOD FINDER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KINDER FOOD FINDER.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B93BB34C2249CDFB00054AF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -212,9 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				B93BB34C2249CDFB00054AF5 /* AppDelegate.swift */,
-				5CD45674227063A300E3000D /* Favorite.swift */,
 				B9407196224B6C6C00763AC0 /* LineButton.swift */,
-				B92CE2E0227163A6004C241F /* favorite.json */,
 				B948FE10224CCF9B004487D8 /* Rawdata.swift */,
 				B941D6332260336F000176EF /* UIViewHelper.swift */,
 				B95CE4F62265DC2C00435443 /* RoundedTextField.swift */,
@@ -318,7 +312,6 @@
 				282C018F2277126F003A651E /* Podfile in Resources */,
 				B93BB3572249CDFD00054AF5 /* LaunchScreen.storyboard in Resources */,
 				B93BB3522249CDFB00054AF5 /* Main.storyboard in Resources */,
-				B92CE2E1227163A6004C241F /* favorite.json in Resources */,
 				B948FE1D224E330D004487D8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,7 +415,6 @@
 				2876B02B2277E22900E900AD /* SwiftyJSON.swift in Sources */,
 				B9C7891022535E4B005123E9 /* SearchVC.swift in Sources */,
 				B9407197224B6C6C00763AC0 /* LineButton.swift in Sources */,
-				5CD45675227063A300E3000D /* Favorite.swift in Sources */,
 				2876B0292277DFCF00E900AD /* HomePageViewController.swift in Sources */,
 				9A7268AA225CB75B00E45BF4 /* BrowserResultVC.swift in Sources */,
 				B93CFF7922603F8100702096 /* MoreVC.swift in Sources */,

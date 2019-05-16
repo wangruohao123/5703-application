@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5Rh-W6-W4A">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5Rh-W6-W4A">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -482,22 +482,9 @@
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2M0-3W-aKb">
-                                                                <rect key="frame" x="260" y="36" width="28" height="28"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="28" id="EZf-aJ-Jja"/>
-                                                                    <constraint firstAttribute="width" constant="28" id="uQ7-8X-YgI"/>
-                                                                </constraints>
-                                                                <state key="normal" image="unfav"/>
-                                                                <connections>
-                                                                    <action selector="favBtnTap:" destination="cOO-zo-2Lj" eventType="touchUpInside" id="18N-9H-c2T"/>
-                                                                </connections>
-                                                            </button>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="2M0-3W-aKb" firstAttribute="centerY" secondItem="S14-Pa-Lko" secondAttribute="centerY" id="834-Z2-dDn"/>
                                                             <constraint firstItem="8iz-DD-LWc" firstAttribute="leading" secondItem="S14-Pa-Lko" secondAttribute="leading" constant="15" id="SPT-dc-6Lc"/>
-                                                            <constraint firstAttribute="trailing" secondItem="2M0-3W-aKb" secondAttribute="trailing" constant="15" id="Waw-Fr-Q3m"/>
                                                             <constraint firstItem="8iz-DD-LWc" firstAttribute="centerY" secondItem="S14-Pa-Lko" secondAttribute="centerY" id="rX4-Ae-3jw"/>
                                                         </constraints>
                                                     </view>
@@ -553,7 +540,6 @@
                                     <outlet property="backImageView" destination="LSR-x2-edv" id="NF9-ih-aq9"/>
                                     <outlet property="brandLabel" destination="OXv-Aw-IIF" id="FTu-TH-i0L"/>
                                     <outlet property="classLabel" destination="edz-eT-M4n" id="GEh-3j-Sw2"/>
-                                    <outlet property="favBtn" destination="2M0-3W-aKb" id="Fo0-P4-che"/>
                                     <segue destination="Bpw-l6-Pzr" kind="show" identifier="showDetail" id="lQh-tz-VGg"/>
                                 </connections>
                             </tableViewCell>
@@ -643,22 +629,9 @@
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZi-8M-qCl">
-                                                                <rect key="frame" x="260" y="36" width="28" height="28"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="28" id="Zaa-4u-Owt"/>
-                                                                    <constraint firstAttribute="height" constant="28" id="sig-RE-i2j"/>
-                                                                </constraints>
-                                                                <state key="normal" image="unfav"/>
-                                                                <connections>
-                                                                    <action selector="favBtnTap:" destination="BpK-cc-Rmr" eventType="touchUpInside" id="P4s-eA-mJE"/>
-                                                                </connections>
-                                                            </button>
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="1da-6w-z3W" firstAttribute="centerY" secondItem="Vq0-O3-mfv" secondAttribute="centerY" id="7az-FN-dC0"/>
-                                                            <constraint firstAttribute="trailing" secondItem="XZi-8M-qCl" secondAttribute="trailing" constant="15" id="H1h-gz-H95"/>
-                                                            <constraint firstItem="XZi-8M-qCl" firstAttribute="centerY" secondItem="Vq0-O3-mfv" secondAttribute="centerY" id="QS9-14-Nhc"/>
                                                             <constraint firstItem="1da-6w-z3W" firstAttribute="leading" secondItem="Vq0-O3-mfv" secondAttribute="leading" constant="15" id="XzO-GT-X3i"/>
                                                         </constraints>
                                                     </view>
@@ -714,7 +687,6 @@
                                     <outlet property="backImageView" destination="Xsi-VL-3wk" id="PPm-5I-KFu"/>
                                     <outlet property="brandLabel" destination="h6M-U8-l1q" id="zAV-aj-QkX"/>
                                     <outlet property="classLabel" destination="Gap-CK-N6j" id="YQc-Ih-Adj"/>
-                                    <outlet property="favBtn" destination="XZi-8M-qCl" id="gab-vs-ZA5"/>
                                     <segue destination="Bpw-l6-Pzr" kind="show" identifier="showDetail" id="wqo-dA-hzc"/>
                                 </connections>
                             </tableViewCell>
@@ -874,7 +846,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9cA-c7-qCs">
-                                <rect key="frame" x="24" y="342" width="335" height="387"/>
+                                <rect key="frame" x="24" y="373" width="335" height="387"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="335" id="fP8-YC-r8C"/>
@@ -899,10 +871,10 @@ NB. RSPCA, FREPA and Egg Corp Assured Scheme allow for beak-trimming which is th
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="learnegg" translatesAutoresizingMaskIntoConstraints="NO" id="K1W-9S-2Ux">
-                                <rect key="frame" x="24" y="165" width="335" height="169"/>
+                                <rect key="frame" x="1" y="165" width="370" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="169" id="Sqp-c0-tjJ"/>
-                                    <constraint firstAttribute="width" constant="335" id="iyJ-H4-VSo"/>
+                                    <constraint firstAttribute="height" constant="200" id="Sqp-c0-tjJ"/>
+                                    <constraint firstAttribute="width" constant="370" id="iyJ-H4-VSo"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -910,7 +882,7 @@ NB. RSPCA, FREPA and Egg Corp Assured Scheme allow for beak-trimming which is th
                         <constraints>
                             <constraint firstItem="EXy-uv-imy" firstAttribute="leading" secondItem="VaK-jD-nGK" secondAttribute="leadingMargin" constant="8" id="AiN-qw-bLh"/>
                             <constraint firstItem="K1W-9S-2Ux" firstAttribute="top" secondItem="EXy-uv-imy" secondAttribute="bottom" constant="8" id="BNU-Bc-7CI"/>
-                            <constraint firstItem="K1W-9S-2Ux" firstAttribute="leading" secondItem="VaK-jD-nGK" secondAttribute="leadingMargin" constant="8" id="Cjq-kE-Twr"/>
+                            <constraint firstItem="K1W-9S-2Ux" firstAttribute="leading" secondItem="VaK-jD-nGK" secondAttribute="leadingMargin" constant="-15" id="Cjq-kE-Twr"/>
                             <constraint firstItem="9cA-c7-qCs" firstAttribute="top" secondItem="K1W-9S-2Ux" secondAttribute="bottom" constant="8" id="QxN-of-VIj"/>
                             <constraint firstItem="EXy-uv-imy" firstAttribute="top" secondItem="TM3-kk-9d9" secondAttribute="bottom" constant="19" id="iPP-ev-DNY"/>
                             <constraint firstItem="9cA-c7-qCs" firstAttribute="leading" secondItem="VaK-jD-nGK" secondAttribute="leadingMargin" constant="8" id="vU2-3e-Lkc"/>
@@ -984,7 +956,7 @@ NB. RSPCA, FREPA and Egg Corp Assured Scheme allow for beak-trimming which is th
                             </label>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Long tap on the map to get" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a9R-EQ-aXA">
                                 <rect key="frame" x="32" y="560.33333333333337" width="304" height="30"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.86014524650000002" green="0.27314013380000002" blue="0.199636537" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -1116,16 +1088,14 @@ NB. RSPCA, FREPA and Egg Corp Assured Scheme allow for beak-trimming which is th
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zKR-Qg-E9g">
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Avaliable at: （Please search by yourself）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFk-R4-u1y">
-                                <rect key="frame" x="20" y="725" width="326" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avaliable at: （Please search by yourself）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFk-R4-u1y">
+                                <rect key="frame" x="24" y="649" width="326" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OdZ-zE-lPp">
-                                <rect key="frame" x="28" y="754" width="358" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OdZ-zE-lPp">
+                                <rect key="frame" x="34" y="678" width="306" height="43"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1133,10 +1103,18 @@ NB. RSPCA, FREPA and Egg Corp Assured Scheme allow for beak-trimming which is th
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="QJD-L1-TrV" firstAttribute="top" secondItem="OdZ-zE-lPp" secondAttribute="bottom" constant="8" id="5gA-PD-rrJ"/>
                             <constraint firstAttribute="trailing" secondItem="zKR-Qg-E9g" secondAttribute="trailing" id="5xY-eB-LNq"/>
                             <constraint firstItem="zKR-Qg-E9g" firstAttribute="bottom" secondItem="QJD-L1-TrV" secondAttribute="top" id="8aB-Jo-Uir"/>
+                            <constraint firstItem="OdZ-zE-lPp" firstAttribute="top" secondItem="TFk-R4-u1y" secondAttribute="bottom" constant="8" id="ALB-N7-ijr"/>
+                            <constraint firstItem="TFk-R4-u1y" firstAttribute="top" secondItem="yXU-cJ-Tz7" secondAttribute="bottom" constant="561" id="Gei-a8-Myb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OdZ-zE-lPp" secondAttribute="trailing" constant="19" id="QV5-oW-2g9"/>
                             <constraint firstItem="zKR-Qg-E9g" firstAttribute="top" secondItem="yXU-cJ-Tz7" secondAttribute="bottom" id="X8C-6Q-dTE"/>
+                            <constraint firstItem="OdZ-zE-lPp" firstAttribute="top" secondItem="TFk-R4-u1y" secondAttribute="bottom" constant="8" id="aZd-MR-IW5"/>
                             <constraint firstItem="zKR-Qg-E9g" firstAttribute="leading" secondItem="SGC-VM-QC3" secondAttribute="leading" id="dHu-pr-jR6"/>
+                            <constraint firstItem="OdZ-zE-lPp" firstAttribute="leading" secondItem="SGC-VM-QC3" secondAttribute="leadingMargin" constant="18" id="oJh-tf-5VU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TFk-R4-u1y" secondAttribute="trailing" constant="9" id="s9I-CT-Mw7"/>
+                            <constraint firstItem="TFk-R4-u1y" firstAttribute="leading" secondItem="SGC-VM-QC3" secondAttribute="leadingMargin" constant="8" id="zuz-OZ-3gs"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -1156,7 +1134,7 @@ NB. RSPCA, FREPA and Egg Corp Assured Scheme allow for beak-trimming which is th
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nam-ic-Oeg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8230.434782608696" y="-393.75"/>
+            <point key="canvasLocation" x="8229.6000000000004" y="-393.8423645320197"/>
         </scene>
         <!--BrowserResult-->
         <scene sceneID="Nge-Yl-Tm5">
@@ -1214,23 +1192,10 @@ NB. RSPCA, FREPA and Egg Corp Assured Scheme allow for beak-trimming which is th
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTn-9c-SJ7">
-                                                                <rect key="frame" x="260" y="36" width="28" height="28"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="28" id="qbT-S7-Cbm"/>
-                                                                    <constraint firstAttribute="width" constant="28" id="v4W-qS-TCb"/>
-                                                                </constraints>
-                                                                <state key="normal" image="unfav"/>
-                                                                <connections>
-                                                                    <action selector="favBtnTap:" destination="mKE-jt-6p2" eventType="touchUpInside" id="zTe-gT-YuM"/>
-                                                                </connections>
-                                                            </button>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="LTn-9c-SJ7" firstAttribute="centerY" secondItem="Lxj-q5-rnU" secondAttribute="centerY" id="28j-NK-JUF"/>
                                                             <constraint firstItem="eYZ-6m-tLa" firstAttribute="centerY" secondItem="Lxj-q5-rnU" secondAttribute="centerY" id="AY8-8x-Xsf"/>
                                                             <constraint firstItem="eYZ-6m-tLa" firstAttribute="leading" secondItem="Lxj-q5-rnU" secondAttribute="leading" constant="15" id="HfU-TE-aOS"/>
-                                                            <constraint firstAttribute="trailing" secondItem="LTn-9c-SJ7" secondAttribute="trailing" constant="15" id="NO1-dm-1I8"/>
                                                         </constraints>
                                                     </view>
                                                     <constraints>
@@ -1285,7 +1250,6 @@ NB. RSPCA, FREPA and Egg Corp Assured Scheme allow for beak-trimming which is th
                                     <outlet property="backImageView" destination="dqU-O0-Gur" id="9M8-Eh-Hea"/>
                                     <outlet property="brandLabel" destination="eBr-Q9-ZFE" id="hVF-KU-THo"/>
                                     <outlet property="classLabel" destination="giq-YW-Iyk" id="eEY-LR-V7Z"/>
-                                    <outlet property="favBtn" destination="LTn-9c-SJ7" id="C4F-QN-rTp"/>
                                     <segue destination="Bpw-l6-Pzr" kind="show" identifier="showclassDetail" id="vsQ-Pm-08s"/>
                                 </connections>
                             </tableViewCell>
@@ -1812,17 +1776,17 @@ Get in touch by emailing us as @ XXX
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lettuce rows 2013" translatesAutoresizingMaskIntoConstraints="NO" id="3Ha-Cg-Zrm" userLabel="Background Image View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="859.33333333333337"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <view clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAT-96-16W" userLabel="MaskView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="859.33333333333337"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="mxb-M0-8Ec">
-                                <rect key="frame" x="30" y="128.33333333333337" width="315" height="563"/>
+                                <rect key="frame" x="30" y="128" width="315" height="516"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="PIq-YB-0ho">
-                                        <rect key="frame" x="0.0" y="0.0" width="315" height="483"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="436"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="37r-U8-zjX">
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="38"/>
@@ -1860,7 +1824,7 @@ Get in touch by emailing us as @ XXX
                                                         </constraints>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5mo-Wa-XOF" userLabel="Divider">
-                                                        <rect key="frame" x="0.0" y="36.999999999999986" width="315" height="1"/>
+                                                        <rect key="frame" x="0.0" y="37" width="315" height="1"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                 </subviews>
@@ -1872,7 +1836,7 @@ Get in touch by emailing us as @ XXX
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="o7S-bA-pZz">
-                                                <rect key="frame" x="0.0" y="57.999999999999986" width="315" height="38"/>
+                                                <rect key="frame" x="0.0" y="58" width="315" height="38"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wfj-Sh-rrP">
                                                         <rect key="frame" x="0.0" y="0.0" width="315" height="27"/>
@@ -1954,7 +1918,7 @@ Get in touch by emailing us as @ XXX
                                                         </constraints>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uBn-Dq-chE" userLabel="Divider">
-                                                        <rect key="frame" x="0.0" y="37.000000000000028" width="315" height="1"/>
+                                                        <rect key="frame" x="0.0" y="37" width="315" height="1"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                 </subviews>
@@ -1976,13 +1940,13 @@ Get in touch by emailing us as @ XXX
                                                         <rect key="frame" x="0.0" y="0.0" width="315" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQR-vN-DfE">
-                                                                <rect key="frame" x="0.0" y="0.0" width="315" height="20"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="315" height="20.333333333333332"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ag3-Ie-YU8" userLabel="GenderButton">
-                                                                <rect key="frame" x="0.0" y="20" width="315" height="31"/>
+                                                                <rect key="frame" x="0.0" y="20.333333333333314" width="315" height="30.666666666666671"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="29.670000000000002" id="Xgq-op-XBi"/>
                                                                 </constraints>
@@ -2080,10 +2044,10 @@ Get in touch by emailing us as @ XXX
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ees-GC-HB7">
-                                                <rect key="frame" x="0.0" y="313" width="315" height="149"/>
+                                                <rect key="frame" x="0.0" y="313" width="315" height="102"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="c8v-Jc-ocw">
-                                                        <rect key="frame" x="0.0" y="0.0" width="315" height="149"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="315" height="102"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0d-y5-y5s">
                                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="37"/>
@@ -2095,7 +2059,7 @@ Get in touch by emailing us as @ XXX
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Age: Please click here and select the age group you are" textAlignment="natural" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="bMp-c4-T1d" userLabel="ageTextField">
-                                                                <rect key="frame" x="0.0" y="37" width="315" height="112"/>
+                                                                <rect key="frame" x="0.0" y="37" width="315" height="65"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="20"/>
                                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
@@ -2110,7 +2074,7 @@ Get in touch by emailing us as @ XXX
                                                                 </connections>
                                                             </textField>
                                                             <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D93-vQ-pWw">
-                                                                <rect key="frame" x="0.0" y="148.99999999999994" width="315" height="130"/>
+                                                                <rect key="frame" x="0.0" y="149" width="315" height="130"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="130" id="zJk-g9-xUb"/>
@@ -2132,7 +2096,7 @@ Get in touch by emailing us as @ XXX
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kkj-bp-e6j" userLabel="Divider">
-                                                <rect key="frame" x="0.0" y="481.99999999999994" width="315" height="1"/>
+                                                <rect key="frame" x="0.0" y="435" width="315" height="1"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="9G3-lO-mHv"/>
@@ -2153,7 +2117,7 @@ Get in touch by emailing us as @ XXX
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e98-iw-NPM" customClass="LineButton" customModule="KINDER_FOOD_FINDER" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="513" width="315" height="50"/>
+                                        <rect key="frame" x="0.0" y="466" width="315" height="50"/>
                                         <color key="backgroundColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="THx-r0-CBW"/>
@@ -2524,18 +2488,17 @@ Get in touch by emailing us as @ XXX
     <resources>
         <image name="Lettuce rows 2013" width="1080" height="1920"/>
         <image name="Searchbgimage" width="3280" height="4928"/>
-        <image name="chickens" width="372" height="353"/>
+        <image name="chickens" width="372" height="353.33334350585938"/>
         <image name="defaultProfileImage" width="102" height="102"/>
         <image name="email" width="24" height="16"/>
         <image name="google" width="21" height="21"/>
-        <image name="house-outline" width="21" height="21"/>
+        <image name="house-outline" width="21.333333969116211" height="21.333333969116211"/>
         <image name="learnegg" width="800" height="416"/>
         <image name="lock" width="20" height="27"/>
         <image name="logoutIcon" width="19" height="21"/>
-        <image name="map-location" width="42" height="42"/>
-        <image name="party-hat" width="42" height="42"/>
-        <image name="unfav" width="21" height="21"/>
-        <image name="windows" width="21" height="21"/>
+        <image name="map-location" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="party-hat" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="windows" width="21.333333969116211" height="21.333333969116211"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="YaC-vh-lNt"/>

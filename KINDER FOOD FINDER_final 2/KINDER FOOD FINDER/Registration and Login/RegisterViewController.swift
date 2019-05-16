@@ -29,12 +29,25 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         self.selectPickView.delegate = self as? UIPickerViewDelegate
         self.selectPickView.dataSource = self as? UIPickerViewDataSource
       pickerData = ["Prefer not to disclose","Under 18","18-29","30-39","40-49","50-59","60+"]
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+     self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
+        repeatPasswordTextField.delegate = self
+        ageTextField.delegate = self
+        emailTextField.delegate = self
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
 
 
         // Do any additional setup after loading the view.
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        usernameTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        repeatPasswordTextField.resignFirstResponder()
+        ageTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
+        return true
     }
     @objc func handleTap(sender: UITapGestureRecognizer) {
         if sender.state == .ended {

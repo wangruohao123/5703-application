@@ -20,10 +20,17 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, UITextFieldDel
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().uiDelegate = self
+       usernameTextField.delegate = self
+        passwordTextField.delegate = self
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
 
 
         // Do any additional setup after loading the view.
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        usernameTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        return true
     }
     @objc func handleTap(sender: UITapGestureRecognizer) {
         if sender.state == .ended {
