@@ -102,7 +102,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         case 1 :
             gender = "Female"
         case 2 :
-            gender = "secret"
+            gender = "Non-binary"
         default:
             break
         }

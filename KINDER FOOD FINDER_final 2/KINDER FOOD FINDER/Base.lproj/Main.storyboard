@@ -711,11 +711,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" white="0.8982069748" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" white="0.94773264440000005" alpha="1" colorSpace="calibratedWhite"/>
-                        <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" preservesSuperviewLayoutMargins="YES" image="chickens" id="LCS-36-pIb">
+                        <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" image="chickens" id="LCS-36-pIb">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <view key="tableFooterView" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" id="3UC-JB-MmY" userLabel="FooterView">
+                        <view key="tableFooterView" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="3UC-JB-MmY" userLabel="FooterView">
                             <rect key="frame" x="0.0" y="472" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -1947,7 +1947,7 @@ Get in touch by emailing us as @ XXX
                                                                 <segments>
                                                                     <segment title="Male"/>
                                                                     <segment title="Female"/>
-                                                                    <segment title="secret"/>
+                                                                    <segment title="Non-binary"/>
                                                                 </segments>
                                                                 <connections>
                                                                     <action selector="genderButtonClicked:" destination="Ten-lE-aNg" eventType="valueChanged" id="0lR-lF-HMI"/>
@@ -2252,7 +2252,7 @@ Get in touch by emailing us as @ XXX
                                                         <segments>
                                                             <segment title="Male"/>
                                                             <segment title="Female"/>
-                                                            <segment title="secret"/>
+                                                            <segment title="Non-binary"/>
                                                         </segments>
                                                         <connections>
                                                             <action selector="genderButtonClicked:" destination="AhJ-Th-XoL" eventType="valueChanged" id="dXy-Jc-Mao"/>
@@ -2474,17 +2474,17 @@ Get in touch by emailing us as @ XXX
     <resources>
         <image name="Lettuce rows 2013" width="1080" height="1920"/>
         <image name="Searchbgimage" width="3280" height="4928"/>
-        <image name="chickens" width="372" height="353"/>
+        <image name="chickens" width="558" height="530"/>
         <image name="defaultProfileImage" width="102" height="102"/>
         <image name="email" width="24" height="16"/>
         <image name="google" width="21" height="21"/>
-        <image name="house-outline" width="21" height="21"/>
+        <image name="house-outline" width="51.200000762939453" height="51.200000762939453"/>
         <image name="learnegg" width="800" height="416"/>
         <image name="lock" width="20" height="27"/>
         <image name="logoutIcon" width="19" height="21"/>
-        <image name="map-location" width="42" height="42"/>
-        <image name="party-hat" width="42" height="42"/>
-        <image name="windows" width="21" height="21"/>
+        <image name="map-location" width="47.505153656005859" height="47.505153656005859"/>
+        <image name="party-hat" width="512" height="512"/>
+        <image name="windows" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="YaC-vh-lNt"/>

@@ -72,7 +72,7 @@ class GoogleRegisterViewController: UIViewController, UITextFieldDelegate, UIPic
         case 1 :
             gender = "Female"
         case 2 :
-            gender = "secret"
+            gender = "Non-binary"
         default:
             break
         }
