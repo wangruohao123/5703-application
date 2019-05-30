@@ -28,7 +28,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>3</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -40,6 +40,8 @@
 	<string>Will you allow this app to always know your location?</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Will you allow this app to always know your location?</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Will you allow this app to use location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We want to know your current location, please accept.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>

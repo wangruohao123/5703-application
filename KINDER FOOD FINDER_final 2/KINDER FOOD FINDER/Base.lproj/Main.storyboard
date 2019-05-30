@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5Rh-W6-W4A">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5Rh-W6-W4A">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -237,7 +237,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vtt-Rb-oec" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="224.80000000000001" y="123.68815592203899"/>
+            <point key="canvasLocation" x="-1023" y="112"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Qlb-ps-Nbd">
@@ -711,11 +711,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" white="0.8982069748" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" white="0.94773264440000005" alpha="1" colorSpace="calibratedWhite"/>
-                        <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" image="chickens" id="LCS-36-pIb">
+                        <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" preservesSuperviewLayoutMargins="YES" image="chickens" id="LCS-36-pIb">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <view key="tableFooterView" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" id="3UC-JB-MmY" userLabel="FooterView">
+                        <view key="tableFooterView" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" id="3UC-JB-MmY" userLabel="FooterView">
                             <rect key="frame" x="0.0" y="472" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -1424,7 +1424,7 @@ Currently, we cover only the production of eggs, poultry and pork. The decision 
 
 Have a question for us? 
 
-Get in touch by emailing us as @ XXX
+Get in touch by emailing us as Acor3786@uni.sydney.edu.au
 </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1459,7 +1459,7 @@ Get in touch by emailing us as @ XXX
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Helping you find kinder eggs, chicken and pork" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZsH-uk-E6n">
-                                        <rect key="frame" x="27" y="299" width="340" height="21"/>
+                                        <rect key="frame" x="27" y="298" width="340" height="18"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1471,7 +1471,7 @@ Get in touch by emailing us as @ XXX
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xc7-Mi-Dtc" customClass="LineButton" customModule="KINDER_FOOD_FINDER" customModuleProvider="target">
                                 <rect key="frame" x="16" y="708" width="343" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="bnL-dS-JaR"/>
+                                    <constraint firstAttribute="height" constant="50" id="hEV-Rt-c0R"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="17"/>
                                 <state key="normal" title="Sign Up">
@@ -1495,7 +1495,7 @@ Get in touch by emailing us as @ XXX
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZl-Wp-3Id" customClass="LineButton" customModule="KINDER_FOOD_FINDER" customModuleProvider="target">
                                 <rect key="frame" x="16" y="514" width="343" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="uni-eM-DDt"/>
+                                    <constraint firstAttribute="height" constant="50" id="e8m-j4-HpJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1554,29 +1554,42 @@ Get in touch by emailing us as @ XXX
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="058-Zm-m6z">
+                                <rect key="frame" x="25" y="658" width="334" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Log in without registration (Tourist mode) ">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="H4x-qz-466" kind="presentation" id="HBl-df-a8c"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Zfu-u3-ZcI" firstAttribute="bottom" secondItem="s17-xb-yGI" secondAttribute="bottom" id="6LH-6j-lOt"/>
-                            <constraint firstItem="Xc7-Mi-Dtc" firstAttribute="top" secondItem="VfB-Qb-uDE" secondAttribute="bottom" constant="64" id="Bh9-UB-CrA"/>
-                            <constraint firstItem="VfB-Qb-uDE" firstAttribute="top" secondItem="xZl-Wp-3Id" secondAttribute="bottom" constant="30" id="CGN-Oi-unS"/>
+                            <constraint firstItem="af9-Xa-qYV" firstAttribute="leading" secondItem="dzi-UA-1fJ" secondAttribute="leading" constant="25" id="0Xg-wS-rEf"/>
+                            <constraint firstItem="VfB-Qb-uDE" firstAttribute="leading" secondItem="Xc7-Mi-Dtc" secondAttribute="leading" id="28S-1Q-HRA"/>
+                            <constraint firstItem="VfB-Qb-uDE" firstAttribute="top" secondItem="xZl-Wp-3Id" secondAttribute="bottom" constant="30" id="5bA-xj-j7x"/>
+                            <constraint firstItem="dzi-UA-1fJ" firstAttribute="trailing" secondItem="af9-Xa-qYV" secondAttribute="trailing" constant="48" id="BZ8-z1-RzU"/>
+                            <constraint firstItem="xZl-Wp-3Id" firstAttribute="leading" secondItem="BV7-kN-9of" secondAttribute="leadingMargin" id="G2U-jR-Gg7"/>
                             <constraint firstItem="s17-xb-yGI" firstAttribute="top" secondItem="BV7-kN-9of" secondAttribute="top" id="Gct-2w-FUX"/>
-                            <constraint firstItem="af9-Xa-qYV" firstAttribute="top" secondItem="dzi-UA-1fJ" secondAttribute="top" constant="60" id="Hiv-Xj-oYk"/>
-                            <constraint firstItem="VfB-Qb-uDE" firstAttribute="trailing" secondItem="Xc7-Mi-Dtc" secondAttribute="trailing" id="Hwy-dx-yVy"/>
-                            <constraint firstItem="Zfu-u3-ZcI" firstAttribute="trailing" secondItem="s17-xb-yGI" secondAttribute="trailing" id="N4N-hg-3D7"/>
-                            <constraint firstItem="Zfu-u3-ZcI" firstAttribute="centerX" secondItem="VfB-Qb-uDE" secondAttribute="centerX" id="NBh-T2-sJ8"/>
-                            <constraint firstItem="xZl-Wp-3Id" firstAttribute="trailing" secondItem="VfB-Qb-uDE" secondAttribute="trailing" id="Rrp-VD-ihH"/>
-                            <constraint firstItem="Zfu-u3-ZcI" firstAttribute="leading" secondItem="s17-xb-yGI" secondAttribute="leading" id="XDy-ot-hgt"/>
-                            <constraint firstItem="xZl-Wp-3Id" firstAttribute="leading" secondItem="VfB-Qb-uDE" secondAttribute="leading" id="Y5f-x9-FT4"/>
-                            <constraint firstItem="VfB-Qb-uDE" firstAttribute="leading" secondItem="Xc7-Mi-Dtc" secondAttribute="leading" id="bjX-d6-GQo"/>
-                            <constraint firstItem="dzi-UA-1fJ" firstAttribute="trailing" secondItem="af9-Xa-qYV" secondAttribute="trailing" constant="48" id="eTb-6e-Nky"/>
+                            <constraint firstItem="Xc7-Mi-Dtc" firstAttribute="top" secondItem="058-Zm-m6z" secondAttribute="bottom" constant="16" id="KF1-UK-6uI"/>
+                            <constraint firstItem="af9-Xa-qYV" firstAttribute="top" secondItem="dzi-UA-1fJ" secondAttribute="top" constant="60" id="L4e-6E-S2u"/>
+                            <constraint firstItem="Zfu-u3-ZcI" firstAttribute="bottom" secondItem="s17-xb-yGI" secondAttribute="bottom" id="MAm-re-xmf"/>
+                            <constraint firstItem="Zfu-u3-ZcI" firstAttribute="centerX" secondItem="xZl-Wp-3Id" secondAttribute="centerX" id="Paf-nD-s8l"/>
+                            <constraint firstItem="058-Zm-m6z" firstAttribute="trailing" secondItem="Xc7-Mi-Dtc" secondAttribute="trailing" id="bGD-a4-pNh"/>
+                            <constraint firstItem="Zfu-u3-ZcI" firstAttribute="trailing" secondItem="s17-xb-yGI" secondAttribute="trailing" id="eCj-e8-XnE"/>
                             <constraint firstAttribute="bottom" secondItem="s17-xb-yGI" secondAttribute="bottom" id="ein-QS-x0K"/>
-                            <constraint firstItem="dzi-UA-1fJ" firstAttribute="bottom" secondItem="Xc7-Mi-Dtc" secondAttribute="bottom" constant="20" id="gpy-s8-zw6"/>
-                            <constraint firstItem="Zfu-u3-ZcI" firstAttribute="top" secondItem="s17-xb-yGI" secondAttribute="top" id="jdM-7F-QeY"/>
+                            <constraint firstItem="xZl-Wp-3Id" firstAttribute="trailing" secondItem="VfB-Qb-uDE" secondAttribute="trailing" id="g03-Hj-Wvp"/>
+                            <constraint firstItem="xZl-Wp-3Id" firstAttribute="leading" secondItem="VfB-Qb-uDE" secondAttribute="leading" id="ggv-cZ-9Ue"/>
+                            <constraint firstItem="VfB-Qb-uDE" firstAttribute="trailing" secondItem="058-Zm-m6z" secondAttribute="trailing" id="j5i-C4-3Jr"/>
                             <constraint firstItem="dzi-UA-1fJ" firstAttribute="trailing" secondItem="s17-xb-yGI" secondAttribute="trailing" id="lYS-Y6-GKU"/>
+                            <constraint firstItem="Zfu-u3-ZcI" firstAttribute="top" secondItem="s17-xb-yGI" secondAttribute="top" id="mNQ-wn-tLo"/>
                             <constraint firstItem="s17-xb-yGI" firstAttribute="leading" secondItem="dzi-UA-1fJ" secondAttribute="leading" id="oIa-LI-dY3"/>
-                            <constraint firstItem="af9-Xa-qYV" firstAttribute="leading" secondItem="dzi-UA-1fJ" secondAttribute="leading" constant="25" id="qNm-jd-8Tg"/>
-                            <constraint firstItem="xZl-Wp-3Id" firstAttribute="leading" secondItem="BV7-kN-9of" secondAttribute="leadingMargin" id="vI0-rX-kNV"/>
+                            <constraint firstItem="Zfu-u3-ZcI" firstAttribute="leading" secondItem="s17-xb-yGI" secondAttribute="leading" id="rIJ-M6-JZU"/>
+                            <constraint firstItem="dzi-UA-1fJ" firstAttribute="bottom" secondItem="Xc7-Mi-Dtc" secondAttribute="bottom" constant="20" id="tv3-ZP-EbP"/>
+                            <constraint firstItem="058-Zm-m6z" firstAttribute="top" secondItem="VfB-Qb-uDE" secondAttribute="bottom" constant="14" id="uOg-qF-8an"/>
+                            <constraint firstItem="af9-Xa-qYV" firstAttribute="leading" secondItem="058-Zm-m6z" secondAttribute="leading" id="yAo-4N-g44"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dzi-UA-1fJ"/>
                     </view>
@@ -1713,8 +1726,8 @@ Get in touch by emailing us as @ XXX
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kko-Vl-LZT">
                                         <rect key="frame" x="0.0" y="203" width="323" height="36"/>
-                                        <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="16"/>
-                                        <state key="normal" title="I do not have account, let me sign in ">
+                                        <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="15"/>
+                                        <state key="normal" title="If you don't have an account, click it to sign in ">
                                             <color key="titleColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -2474,21 +2487,21 @@ Get in touch by emailing us as @ XXX
     <resources>
         <image name="Lettuce rows 2013" width="1080" height="1920"/>
         <image name="Searchbgimage" width="3280" height="4928"/>
-        <image name="chickens" width="558" height="530"/>
+        <image name="chickens" width="372" height="353.33334350585938"/>
         <image name="defaultProfileImage" width="102" height="102"/>
         <image name="email" width="24" height="16"/>
         <image name="google" width="21" height="21"/>
-        <image name="house-outline" width="51.200000762939453" height="51.200000762939453"/>
+        <image name="house-outline" width="21.333333969116211" height="21.333333969116211"/>
         <image name="learnegg" width="800" height="416"/>
         <image name="lock" width="20" height="27"/>
         <image name="logoutIcon" width="19" height="21"/>
-        <image name="map-location" width="47.505153656005859" height="47.505153656005859"/>
-        <image name="party-hat" width="512" height="512"/>
-        <image name="windows" width="48" height="48"/>
+        <image name="map-location" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="party-hat" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="windows" width="21.333333969116211" height="21.333333969116211"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="YaC-vh-lNt"/>
-        <segue reference="EVG-EA-TVU"/>
+        <segue reference="Y9V-N9-ffc"/>
         <segue reference="miT-Fa-xev"/>
         <segue reference="vsQ-Pm-08s"/>
     </inferredMetricsTieBreakers>
